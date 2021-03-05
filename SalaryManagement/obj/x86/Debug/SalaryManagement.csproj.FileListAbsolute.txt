@@ -10,3 +10,11 @@ D:\MavenScript\Project\Windows\SalaryManagement\SalaryManagement\obj\x86\Debug\S
 D:\MavenScript\Project\Windows\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.MasterRegistration.resources
 D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.exe
 D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.csprojResolveAssemblyReference.cache
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.frmCreate.resources
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.frmUpdateDeleteUser.resources
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.MasterRegistration.resources
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.Properties.Resources.resources
+D:\MavenScript\Project\Windows\New Project\SalaryManagement\SalaryManagement\obj\x86\Debug\SalaryManagement.csproj.GenerateResource.Cache
