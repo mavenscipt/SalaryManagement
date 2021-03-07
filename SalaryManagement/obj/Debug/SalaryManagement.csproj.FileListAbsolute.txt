@@ -1,0 +1,8 @@
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csprojAssemblyReference.cache
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Properties.Resources.resources
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.GenerateResource.cache
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
