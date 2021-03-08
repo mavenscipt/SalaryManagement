@@ -6,3 +6,5 @@ D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManageme
 D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
 D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
+D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmSalary.resources

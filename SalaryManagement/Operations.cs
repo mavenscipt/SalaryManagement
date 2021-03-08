@@ -10,7 +10,7 @@ namespace SalaryManagement
     class Operations
     {
         
-        public SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Maindb.mdf;Integrated Security=True;User Instance=True;MultipleActiveResultSets=True");
+        public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\MavenScript\Project\Windows\Latest repository\SalaryManagement\SalaryManagement\bin\Debug\Main.mdf;Integrated Security=True;Connect Timeout=30");
         public SqlConnection getConnection()
         {
             if (con.State == ConnectionState.Closed)
@@ -81,7 +81,22 @@ namespace SalaryManagement
             
             return 0;
         }
+       public Dictionary<int, string> GetEmployeeName()
+        {
+            Dictionary<int, string> Employee = new Dictionary<int, string>();
+            Employee.Add(0, "Select");
+            SqlCommand cmd = new SqlCommand("Select Id,Name from tblEmployeeDetails");
+            cmd.Connection = getConnection();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Employee.Add(Convert.ToInt32(dr[0].ToString()), dr[1].ToString());
+            }
+            return Employee;
+            
+        }
 
-      
+
+
     }
 }
