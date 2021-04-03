@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dept_Wise_Data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dept_Wise_Data.Designer.cs">
+      <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="EDIT_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="FrmSalary.Designer.cs">
       <DependentUpon>FrmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insert_Value.Designer.cs">
+      <DependentUpon>Insert_Value.cs</DependentUpon>
     </Compile>
     <Compile Include="MainDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +126,9 @@
     <Compile Include="Update.Designer.cs">
       <DependentUpon>Update.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dept_Wise_Data.resx">
+      <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EDIT_Delete.resx">
       <DependentUpon>EDIT_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalary.resx">
       <DependentUpon>FrmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insert_Value.resx">
+      <DependentUpon>Insert_Value.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterRegistration.resx">
       <DependentUpon>MasterRegistration.cs</DependentUpon>
