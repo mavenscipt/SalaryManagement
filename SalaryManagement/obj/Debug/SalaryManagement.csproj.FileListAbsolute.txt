@@ -61,3 +61,21 @@ D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\Sala
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmSalary.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main.mdf
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main_log.ldf
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe.config
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.pdb
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csprojAssemblyReference.cache
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Data.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.EDIT_Delete.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmSalary.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.MasterRegistration.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Properties.Resources.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Update.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.GenerateResource.cache
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
