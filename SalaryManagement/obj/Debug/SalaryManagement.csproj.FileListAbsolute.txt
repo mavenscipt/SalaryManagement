@@ -79,3 +79,4 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Upad.resources
