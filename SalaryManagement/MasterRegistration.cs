@@ -12,6 +12,7 @@ namespace SalaryManagement
 {
     public partial class MasterRegistration : Form
     {
+        Operations Op = new Operations();
         string ImagePath,AdharPath,Pan_Path,Election_Path;
         public MasterRegistration()
         {
@@ -23,8 +24,7 @@ namespace SalaryManagement
             if (Form_valid==true)
             {
                 double Adhar = double.Parse(txtAdharFirst.Text + txtAdharSecond.Text + txtAdharThird.Text);
-                Operations OP = new Operations();
-                string abc=OP.InsertEmployee(txtEmployeeName.Text.ToString(),ImagePath,cmbSex.SelectedItem.ToString(),dtBirthDate.Value.ToString(),Convert.ToInt32(txtAge.Text),Adhar,txtPermanentAddress.Text,Convert.ToInt32(txtPincode.Text),Convert.ToDouble(txtPersonalMobile1.Text),Convert.ToDouble(txtPersonalMobile2.Text),Convert.ToDouble(txtFamilyMobile1.Text),Convert.ToDouble(txtFamilyMobile2.Text),txtReferenceName.Text,Convert.ToDouble(txtReferenceMobile.Text),cmbOriginalDoc.SelectedItem.ToString(),txtLastCompanyName.Text,txtLastWorkTime.Text,cmbDepartment.SelectedIndex,cmbDesignation.SelectedValue.ToString(),cmbEmployeecategory.SelectedItem.ToString(),cmbContract.SelectedValue.ToString(),getResidentialStatus(),getSalaryType(),Convert.ToDouble(txtSalary.Text),AdharPath,Pan_Path,Election_Path,txtAcHolderName.Text,txtBankName.Text,txtBranchName.Text,txtISFCCode.Text,Convert.ToDouble(txtAcNumber.Text));
+                string abc=Op.InsertEmployee(txtEmployeeName.Text.ToString(),ImagePath,cmbSex.SelectedItem.ToString(),dtBirthDate.Value.ToString(),Convert.ToInt32(txtAge.Text),Adhar,txtPermanentAddress.Text,Convert.ToInt32(txtPincode.Text),Convert.ToDouble(txtPersonalMobile1.Text),Convert.ToDouble(txtPersonalMobile2.Text),Convert.ToDouble(txtFamilyMobile1.Text),Convert.ToDouble(txtFamilyMobile2.Text),txtReferenceName.Text,Convert.ToDouble(txtReferenceMobile.Text),cmbOriginalDoc.SelectedItem.ToString(),txtLastCompanyName.Text,txtLastWorkTime.Text,(int)cmbDepartment.SelectedValue,cmbDesignation.SelectedValue.ToString(),cmbEmployeecategory.SelectedItem.ToString(),cmbContract.SelectedValue.ToString(),getResidentialStatus(),getSalaryType(),Convert.ToDouble(txtSalary.Text),AdharPath,Pan_Path,Election_Path,txtAcHolderName.Text,txtBankName.Text,txtBranchName.Text,txtISFCCode.Text,Convert.ToDouble(txtAcNumber.Text));
                 MessageBox.Show(abc);
             }
         }
@@ -910,13 +910,14 @@ namespace SalaryManagement
 
         private void MasterRegistration_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'mainDataSet4.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter1.Fill(this.mainDataSet4.Department);
             // TODO: This line of code loads data into the 'mainDataSet2.Contractor' table. You can move, or remove it, as needed.
             this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
             // TODO: This line of code loads data into the 'mainDataSet1.Designation' table. You can move, or remove it, as needed.
             this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
             // TODO: This line of code loads data into the 'mainDataSet.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.mainDataSet.Department);
-
         }
 
         private void TxtSalary_TextChanged(object sender, EventArgs e)

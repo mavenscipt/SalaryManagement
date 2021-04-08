@@ -150,6 +150,9 @@
             this.departmentTableAdapter = new SalaryManagement.MainDataSetTableAdapters.DepartmentTableAdapter();
             this.designationTableAdapter = new SalaryManagement.MainDataSet1TableAdapters.DesignationTableAdapter();
             this.contractorTableAdapter = new SalaryManagement.MainDataSet2TableAdapters.ContractorTableAdapter();
+            this.mainDataSet4 = new SalaryManagement.MainDataSet4();
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter1 = new SalaryManagement.MainDataSet4TableAdapters.DepartmentTableAdapter();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -195,6 +198,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Election_ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Branch_Name_ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_ErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox5
@@ -1018,8 +1023,8 @@
             // 
             // cmbDepartment
             // 
-            this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "Name", true));
-            this.cmbDepartment.DataSource = this.departmentBindingSource;
+            this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource1, "Id", true));
+            this.cmbDepartment.DataSource = this.departmentBindingSource1;
             this.cmbDepartment.DisplayMember = "Name";
             this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1028,7 +1033,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(121, 24);
             this.cmbDepartment.TabIndex = 11;
-            this.cmbDepartment.ValueMember = "Name";
+            this.cmbDepartment.ValueMember = "Id";
             this.cmbDepartment.Validating += new System.ComponentModel.CancelEventHandler(this.Department_Validating);
             // 
             // departmentBindingSource
@@ -1336,6 +1341,20 @@
             // 
             this.contractorTableAdapter.ClearBeforeFill = true;
             // 
+            // mainDataSet4
+            // 
+            this.mainDataSet4.DataSetName = "MainDataSet4";
+            this.mainDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "Department";
+            this.departmentBindingSource1.DataSource = this.mainDataSet4;
+            // 
+            // departmentTableAdapter1
+            // 
+            this.departmentTableAdapter1.ClearBeforeFill = true;
+            // 
             // MasterRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1403,6 +1422,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Election_ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Branch_Name_ErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_ErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1530,5 +1551,8 @@
         private MainDataSet2 mainDataSet2;
         private System.Windows.Forms.BindingSource contractorBindingSource;
         private MainDataSet2TableAdapters.ContractorTableAdapter contractorTableAdapter;
+        private MainDataSet4 mainDataSet4;
+        private System.Windows.Forms.BindingSource departmentBindingSource1;
+        private MainDataSet4TableAdapters.DepartmentTableAdapter departmentTableAdapter1;
     }
 }

@@ -115,6 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MainDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MasterRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +229,17 @@
     </None>
     <None Include="MainDataSet3.xss">
       <DependentUpon>MainDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MainDataSet4.xsc">
+      <DependentUpon>MainDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="MainDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MainDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MainDataSet4.xss">
+      <DependentUpon>MainDataSet4.xsd</DependentUpon>
     </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
