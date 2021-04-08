@@ -12,6 +12,7 @@ namespace SalaryManagement
 {
     public partial class Upad : Form
     {
+        int UpadId=0;
         Operations op = new Operations();
         public Upad()
         {
@@ -133,5 +134,24 @@ namespace SalaryManagement
             Save_Button.Visible = false;
         }
 
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int EmployeeID = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Key;
+            string EmployeeName = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Value;
+            DialogResult Result = MessageBox.Show("Are You Sure You Want to Delete Kharchi", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Result==DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("Delete from tblUpad where EmployeeId=@E_id and Id=@U_id");
+                cmd.Parameters.AddWithValue("@E_id", EmployeeID);
+                cmd.Parameters.AddWithValue("@U_id", UpadId);
+                cmd.Connection = op.getConnection();
+                int result = cmd.ExecuteNonQuery();
+                if (result>0)
+                {
+                    MessageBox.Show("Upad Delete Successfully...");
+                }
+
+            }
+        }
     }
 }
