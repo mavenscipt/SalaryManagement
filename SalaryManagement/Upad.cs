@@ -78,8 +78,13 @@ namespace SalaryManagement
         {
             if (radioButton2.Checked == true)
             {
-                if (cmb_Employee_Name.Text != "Select")
+                if (cmb_Employee_Name.SelectedText == "Select")
                 {
+                    dataGridView1.Visible = false;
+                }
+                else
+                {
+                    dataGridView1.Visible = true;
                     Bind();
                 }
             }
@@ -150,6 +155,13 @@ namespace SalaryManagement
                 {
                     MessageBox.Show("Upad Delete Successfully...");
                 }
+            }
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > 0)
+            {
             }
         }
     }
