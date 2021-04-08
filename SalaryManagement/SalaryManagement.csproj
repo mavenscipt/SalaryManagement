@@ -65,6 +65,12 @@
     <Compile Include="Dept_Wise_Data.Designer.cs">
       <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dept_Wise_Kharchi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dept_Wise_Kharchi.Designer.cs">
+      <DependentUpon>Dept_Wise_Kharchi.cs</DependentUpon>
+    </Compile>
     <Compile Include="EDIT_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Dept_Wise_Data.resx">
       <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dept_Wise_Kharchi.resx">
+      <DependentUpon>Dept_Wise_Kharchi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EDIT_Delete.resx">
       <DependentUpon>EDIT_Delete.cs</DependentUpon>

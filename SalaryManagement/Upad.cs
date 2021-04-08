@@ -150,7 +150,6 @@ namespace SalaryManagement
                 {
                     MessageBox.Show("Upad Delete Successfully...");
                 }
-
             }
         }
     }

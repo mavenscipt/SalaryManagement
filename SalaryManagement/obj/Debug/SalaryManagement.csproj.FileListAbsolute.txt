@@ -80,3 +80,4 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Upad.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Kharchi.resources
