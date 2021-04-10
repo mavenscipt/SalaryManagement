@@ -96,35 +96,12 @@ namespace SalaryManagement
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {         
-            if (dataGridView1.Rows.Count > 0)
-            {
-                contextMenuStrip1.Visible = false;
-            }
-            else
-            {
-                contextMenuStrip1.Enabled = false;
-            }
+            
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                contextMenuStrip1.Enabled = true;
-            }
-            else
-            {
-                contextMenuStrip1.Enabled = false;
-            }
-            if (e.Button == MouseButtons.Right)
-            {
-                // here we do not come although the contextmenustrip shows up under the mouse pointer
-                //this.dataGridView1.CurrentCell = this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-              
-
-            }
-
-           
+                       
         }
 
         private void dataGridView1_ContextMenuStripChanged(object sender, EventArgs e)
@@ -135,23 +112,12 @@ namespace SalaryManagement
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGridView1.Rows.Count > 0)
-            {
-                contextMenuStrip1.Enabled = true;
-            }
-            else
-            {
-                contextMenuStrip1.Enabled = false;
-            }
+            
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex != -1 && e.ColumnIndex != -1)
-            {
-               
-                
-            }
+            
         }
 
         private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
@@ -169,7 +135,7 @@ namespace SalaryManagement
                 }
                 else
                 {
-                    contextMenuStrip1.Enabled = false;
+                    contextMenuStrip1.Visible = false;
                 }
             }
         }

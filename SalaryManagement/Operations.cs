@@ -18,6 +18,12 @@ namespace SalaryManagement
             }
             return con;
         }
+        public int DataInsert(string query)
+        {
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = getConnection();
+            return cmd.ExecuteNonQuery();
+        }
         public int CreateUsers(string users,string Pass,int Role)
         {
                 SqlCommand cmd = new SqlCommand("SPCreateUser");
@@ -27,6 +33,22 @@ namespace SalaryManagement
                 //cmd.Connection = getConnection();
                 cmd.CommandType = CommandType.StoredProcedure;
                 return cmd.ExecuteNonQuery();        
+        }
+        public string GetSingleItemValue(string query)
+        {
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = getConnection();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    return dr[0].ToString();
+                }
+                //Employee.Add(Convert.ToInt32(dr[0].ToString()), dr[1].ToString());
+            }
+            return "";
         }
         public string DeleteData(int Id)
         {

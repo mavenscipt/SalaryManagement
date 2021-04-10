@@ -72,6 +72,7 @@ namespace SalaryManagement
             this.cmbEmployee.Size = new System.Drawing.Size(200, 21);
             this.cmbEmployee.TabIndex = 20;
             this.cmbEmployee.SelectedIndexChanged += new System.EventHandler(this.cmbEmployee_SelectedIndexChanged);
+            this.cmbEmployee.SelectedValueChanged += new System.EventHandler(this.cmbEmployee_SelectedValueChanged);
             // 
             // pnlKharchi
             // 
@@ -185,31 +186,30 @@ namespace SalaryManagement
             this.pnlEmployeeList.Name = "pnlEmployeeList";
             this.pnlEmployeeList.Size = new System.Drawing.Size(447, 41);
             this.pnlEmployeeList.TabIndex = 27;
-            this.pnlEmployeeList.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmployeeList_Paint);
             // 
             // DGV
             // 
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.ContextMenuStrip = this.contextMenuStrip1;
-            this.DGV.Location = new System.Drawing.Point(3, 342);
+            this.DGV.Location = new System.Drawing.Point(12, 340);
             this.DGV.Name = "DGV";
             this.DGV.Size = new System.Drawing.Size(643, 150);
             this.DGV.TabIndex = 28;
-            this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.DGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_RowHeaderMouseClick);
+            this.DGV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DGV_MouseUp);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 

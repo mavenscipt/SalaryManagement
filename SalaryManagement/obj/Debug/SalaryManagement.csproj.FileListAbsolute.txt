@@ -79,3 +79,8 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Data.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmFixSalary.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmkharchi.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Frm_Kharchi.resources
