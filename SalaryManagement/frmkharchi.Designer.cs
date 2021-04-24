@@ -195,6 +195,7 @@ namespace SalaryManagement
             this.DGV.Name = "DGV";
             this.DGV.Size = new System.Drawing.Size(643, 150);
             this.DGV.TabIndex = 28;
+            this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             this.DGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_RowHeaderMouseClick);
             this.DGV.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DGV_MouseUp);
             // 

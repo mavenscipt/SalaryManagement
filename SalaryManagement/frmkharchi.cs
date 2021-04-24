@@ -30,6 +30,7 @@ namespace SalaryManagement
 
 
 
+
         }
         public void Bind()
         {
@@ -127,8 +128,21 @@ namespace SalaryManagement
                         Bind();
                     }
                 }
+
+
+                //bool KharchiResult = CheckKharchiExist(EmployeeID, "Select EmployeeID from Kharchi_Master where EmployeeID ='" + EmployeeID + "'");
                 
-               
+                //if(KharchiResult)
+                //{
+                //    SqlCommand cmd = new SqlCommand("Select Amount from Kharchi_Master where EmployeeID ='" + EmployeeID + "'");
+                //    cmd.Connection = op.getConnection();
+                //    double ReturnedAmount = (double)cmd.ExecuteScalar();
+
+                //}
+                //else
+                //{
+
+                //}
 
 
             }
@@ -168,6 +182,20 @@ namespace SalaryManagement
             cmbEmployee.SelectedIndex = 0;
 
         }
+        public bool CheckKharchiExist(int EmployeeID,string sqlcmd)
+        {
+            SqlCommand cmd = new SqlCommand(sqlcmd);
+            cmd.Connection = op.getConnection();
+            object result = cmd.ExecuteScalar();
+            if (result != null)
+            {
+                string name = result.ToString();
+                return true;
+            }
+            return false;
+
+        }  
+
 
 
 
@@ -301,6 +329,11 @@ namespace SalaryManagement
         }
 
         private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

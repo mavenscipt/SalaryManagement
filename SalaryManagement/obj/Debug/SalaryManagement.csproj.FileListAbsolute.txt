@@ -83,4 +83,5 @@ D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\Sala
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmFixSalary.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmkharchi.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Frm_Kharchi.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmAllKharchi.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmDailyWadgesSalary.resources
