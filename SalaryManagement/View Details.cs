@@ -26,8 +26,9 @@ namespace SalaryManagement
 
         private void View_Details_Load(object sender, EventArgs e)
         {
+            string Department = null;
             Operations op = new Operations();
-            SqlCommand cmd = new SqlCommand("Select * from tblEmployeeDetails Where Id=@Id");
+            SqlCommand cmd = new SqlCommand("Select * from tblEmployeeDetails Where Id=@ID");
             cmd.Parameters.AddWithValue("@ID", ViewId);
             cmd.Connection = op.getConnection();
             //Getting Data from the Form.....
@@ -40,7 +41,7 @@ namespace SalaryManagement
                 lbl_Gender.Text = sdr["Sex"].ToString();
                 lbl_BirthDate.Text = sdr["BirthDate"].ToString();
                 lbl_age.Text = sdr["Age"].ToString();
-                lbl_AdharNumber.Text= sdr["AdharNo"].ToString();
+                lbl_AdharNumber.Text = sdr["AdharNo"].ToString();
                 lbl_Address.Text = sdr["PermanentAddress"].ToString();
                 lbl_Pincode.Text = sdr["Pincode"].ToString();
                 lbl_Personal_Mobile.Text = sdr["PersonalMobile"].ToString();
@@ -52,11 +53,18 @@ namespace SalaryManagement
                 lbl_Original_Document.Text = sdr["OrignalDocumentSubmited"].ToString();
                 lbl_Last_Company_Name.Text = sdr["LastCompanyName"].ToString();
                 lbl_Last_Company_Work_Time.Text = sdr["LastCompanyWorkTime"].ToString();
-                lbl_Department.Text= sdr["Department"].ToString();
-                lbl_Designation.Text= sdr["Designation"].ToString();
+                SqlCommand cmd1 = new SqlCommand("Select * from Department Where Id=@ID");
+                cmd1.Parameters.AddWithValue("@ID", int.Parse(sdr["Department"].ToString()));
+                cmd1.Connection = op.getConnection();
+                using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+                {
+                    sdr1.Read();
+                    lbl_Department.Text=sdr1["Name"].ToString();
+                }
+                lbl_Designation.Text = sdr["Designation"].ToString();
                 lbl_Employee_Category.Text = sdr["EmployeeCategory"].ToString();
                 lbl_Contractor.Text = sdr["Contractor"].ToString();
-                lbl_Residential_Status.Text= sdr["Residencestatus"].ToString();
+                lbl_Residential_Status.Text = sdr["Residencestatus"].ToString();
                 lbl_Salary_Type.Text = sdr["SalaryType"].ToString();
                 lbl_salary.Text = sdr["Salary"].ToString();
                 lbl_AdharCard.Text = sdr["Adharcard"].ToString();
@@ -68,6 +76,7 @@ namespace SalaryManagement
                 lbl_IFSC_Code.Text = sdr["ISFCCode"].ToString();
                 lbl_Bank_Name.Text = sdr["BankName"].ToString();
             }
+            
         }
 
         private void Save_Button_Click(object sender, EventArgs e)
