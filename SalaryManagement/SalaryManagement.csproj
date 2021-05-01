@@ -59,29 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dept_Wise_Data.cs">
+    <Compile Include="frmDepartmentWiseList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dept_Wise_Data.Designer.cs">
-      <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
+    <Compile Include="frmDepartmentWiseList.Designer.cs">
+      <DependentUpon>frmDepartmentWiseList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dept_Wise_Kharchi.cs">
+    <Compile Include="frmDepartmentWiseKharchi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dept_Wise_Kharchi.Designer.cs">
-      <DependentUpon>Dept_Wise_Kharchi.cs</DependentUpon>
+    <Compile Include="frmDepartmentWiseKharchi.Designer.cs">
+      <DependentUpon>frmDepartmentWiseKharchi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dept_Wise_Upadcs.cs">
+    <Compile Include="frmDepartmentWiseUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dept_Wise_Upadcs.Designer.cs">
-      <DependentUpon>Dept_Wise_Upadcs.cs</DependentUpon>
+    <Compile Include="frmDepartmentWiseUpdate.Designer.cs">
+      <DependentUpon>frmDepartmentWiseUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="EDIT_Delete.cs">
+    <Compile Include="frmEditDeleteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EDIT_Delete.Designer.cs">
-      <DependentUpon>EDIT_Delete.cs</DependentUpon>
+    <Compile Include="frmEditDeleteView.Designer.cs">
+      <DependentUpon>frmEditDeleteView.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -101,11 +101,17 @@
     <Compile Include="FrmSalary.Designer.cs">
       <DependentUpon>FrmSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="Insert_Value.cs">
+    <Compile Include="frmInsert_Department_Designation_Contractor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Insert_Value.Designer.cs">
-      <DependentUpon>Insert_Value.cs</DependentUpon>
+    <Compile Include="frmInsert_Department_Designation_Contractor.Designer.cs">
+      <DependentUpon>frmInsert_Department_Designation_Contractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewContractor.Designer.cs">
+      <DependentUpon>frmViewContractor.cs</DependentUpon>
     </Compile>
     <Compile Include="MainDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -143,35 +149,35 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqlConnection.cs" />
-    <Compile Include="Upad.cs">
+    <Compile Include="frmUpad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Upad.Designer.cs">
-      <DependentUpon>Upad.cs</DependentUpon>
+    <Compile Include="frmUpad.Designer.cs">
+      <DependentUpon>frmUpad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update.cs">
+    <Compile Include="frmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Update.Designer.cs">
-      <DependentUpon>Update.cs</DependentUpon>
+    <Compile Include="frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="View Details.cs">
+    <Compile Include="frmViewDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View Details.Designer.cs">
-      <DependentUpon>View Details.cs</DependentUpon>
+    <Compile Include="frmViewDetails.Designer.cs">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dept_Wise_Data.resx">
-      <DependentUpon>Dept_Wise_Data.cs</DependentUpon>
+    <EmbeddedResource Include="frmDepartmentWiseList.resx">
+      <DependentUpon>frmDepartmentWiseList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dept_Wise_Kharchi.resx">
-      <DependentUpon>Dept_Wise_Kharchi.cs</DependentUpon>
+    <EmbeddedResource Include="frmDepartmentWiseKharchi.resx">
+      <DependentUpon>frmDepartmentWiseKharchi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dept_Wise_Upadcs.resx">
-      <DependentUpon>Dept_Wise_Upadcs.cs</DependentUpon>
+    <EmbeddedResource Include="frmDepartmentWiseUpdate.resx">
+      <DependentUpon>frmDepartmentWiseUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EDIT_Delete.resx">
-      <DependentUpon>EDIT_Delete.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditDeleteView.resx">
+      <DependentUpon>frmEditDeleteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -182,8 +188,11 @@
     <EmbeddedResource Include="FrmSalary.resx">
       <DependentUpon>FrmSalary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Insert_Value.resx">
-      <DependentUpon>Insert_Value.cs</DependentUpon>
+    <EmbeddedResource Include="frmInsert_Department_Designation_Contractor.resx">
+      <DependentUpon>frmInsert_Department_Designation_Contractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewContractor.resx">
+      <DependentUpon>frmViewContractor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterRegistration.resx">
       <DependentUpon>MasterRegistration.cs</DependentUpon>
@@ -198,14 +207,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Upad.resx">
-      <DependentUpon>Upad.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpad.resx">
+      <DependentUpon>frmUpad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Update.resx">
-      <DependentUpon>Update.cs</DependentUpon>
+    <EmbeddedResource Include="frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View Details.resx">
-      <DependentUpon>View Details.cs</DependentUpon>
+    <EmbeddedResource Include="frmViewDetails.resx">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SalaryManagement\v16\.suo" />
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\db.lock" />
