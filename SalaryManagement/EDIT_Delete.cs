@@ -19,20 +19,14 @@ namespace SalaryManagement
         {
             InitializeComponent();
         }
-
         private void Delete_Data_Load(object sender, EventArgs e)
         {
-          
             ComboboxBind();
-           
         }
-       
-    
         void DisplayData()
         {
             int EmployeeID = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Key;
             string Name = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Value;
-          
             Op.getConnection();
             string query = "Select Id,Name,Photo from tblEmployeeDetails where Id=" + EmployeeID + " AND Name='" + Name + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, Op.con);
@@ -46,19 +40,16 @@ namespace SalaryManagement
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = dt;
         }
-
         public void ComboboxBind()
         {
             cmbEmployeeName.DataSource = new BindingSource(Op.GetDataForCombo("select Id,Name from tblEmployeeDetails"), null);
             cmbEmployeeName.DisplayMember = "Value";
             cmbEmployeeName.ValueMember = "Key";
         }
-
         private void Show_Data_Button_Click(object sender, EventArgs e)
         {
             DisplayData();
         }
-
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -66,36 +57,18 @@ namespace SalaryManagement
                 dataGridView1.CurrentRow.Selected = true;
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 Id = int.Parse(row.Cells[0].Value.ToString());
-                
             }
             else
             {
                 contextMenuStrip1.Visible = false;
             }
         }
-
-        private void Delete_Button_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void Update_Button_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void fillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void cmbEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayData();
         }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {         
+        {
             if (dataGridView1.Rows.Count > 0)
             {
                 contextMenuStrip1.Visible = false;
@@ -105,7 +78,6 @@ namespace SalaryManagement
                 contextMenuStrip1.Enabled = false;
             }
         }
-
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -120,19 +92,8 @@ namespace SalaryManagement
             {
                 // here we do not come although the contextmenustrip shows up under the mouse pointer
                 //this.dataGridView1.CurrentCell = this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
-              
-
             }
-
-           
         }
-
-        private void dataGridView1_ContextMenuStripChanged(object sender, EventArgs e)
-        {
-
-          
-        }
-
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -149,16 +110,8 @@ namespace SalaryManagement
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
-               
-                
             }
         }
-
-        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -184,30 +137,23 @@ namespace SalaryManagement
             up.UpdateId = EmployeeId;
             up.Show();
         }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string confirm = (MessageBox.Show("Are You Sure You want to Permanently Delete the Data.?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)).ToString();
             if (confirm == "Yes")
             {
-                 Id = dataGridView1.CurrentCell.RowIndex;
+                Id = dataGridView1.CurrentCell.RowIndex;
                 int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
                 string result = Op.DeleteData(EmployeeId);
-               
-                if(result == "Success")
+
+                if (result == "Success")
                 {
                     MessageBox.Show("Success", "Data Deleted Permanently.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   // DisplayData(); 
+                    // DisplayData(); 
                 }
-                
+
             }
         }
-
         private void cmbEmployeeName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             DisplayData();

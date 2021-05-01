@@ -20,13 +20,13 @@ namespace SalaryManagement
         }
         public int CreateUsers(string users,string Pass,int Role)
         {
-                SqlCommand cmd = new SqlCommand("SPCreateUser");
-                cmd.Parameters.AddWithValue("Username", users);
-                cmd.Parameters.AddWithValue("Password", Pass);
-                cmd.Parameters.AddWithValue("Role", Role);
-                //cmd.Connection = getConnection();
-                cmd.CommandType = CommandType.StoredProcedure;
-                return cmd.ExecuteNonQuery();        
+            SqlCommand cmd = new SqlCommand("SPCreateUser");
+            cmd.Parameters.AddWithValue("Username", users);
+            cmd.Parameters.AddWithValue("Password", Pass);
+            cmd.Parameters.AddWithValue("Role", Role);
+            //cmd.Connection = getConnection();
+            cmd.CommandType = CommandType.StoredProcedure;
+            return cmd.ExecuteNonQuery();        
         }
         public string DeleteData(int Id)
         {
@@ -43,7 +43,6 @@ namespace SalaryManagement
         //    SqlParameter Parm = new SqlParameter();
         //    var returnparameters = cmd.Parameters.Add("count",SqlDbType.Int);
         //    returnparameters.Direction = ParameterDirection.ReturnValue;
-
         //    cmd.Connection = getConnection();
         //    cmd.CommandType = CommandType.StoredProcedure;
         //     cmd.ExecuteNonQuery();        
@@ -62,7 +61,6 @@ namespace SalaryManagement
             }
             return Result;
         }
-
         public int InsertEmployee(string EmployeeName, string BirthDate, int Age, string Sex, int Adhar1, int Adhar2, int Adhar3, string Permanent, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string OrignalDoc, string ReferenceName, double ReferenceMobile, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber, string LastCompanyName, string LastCompanyWorkingTime, string Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary)
         {
             SqlCommand cmd = new SqlCommand("Insert into tblEmployeeMaster");
@@ -82,7 +80,6 @@ namespace SalaryManagement
                 Employee.Add(Convert.ToInt32(dr[0].ToString()), dr[1].ToString());
             }
             return Employee;
-
         }
         //public Dictionary<int,string> GetUserName()
         //{
@@ -154,7 +151,6 @@ namespace SalaryManagement
             cmd.ExecuteNonQuery();            
             return "Success";
         }
-
         public string UpdateData(int id,string EmployeeName, string Photo, string Sex, string BirthDate, int Age, Double Adhar, string P_Address, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string ReferenceName, double ReferenceMobile, string OrignalDoc, string LastCompanyName, string LastCompanyWorkingTime, int Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary, string Adhar_Card, string Pan_Card, string Election_Card, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber)
         {
             SqlCommand cmd = new SqlCommand("Update tblEmployeeDetails set Name=@Name,Photo=@Photo,Sex=@Sex,BirthDate=@Birthdate,Age=@Age,AdharNo=@AdharNo,PermanentAddress=@P_Address,Pincode=@Pincode,PersonalMobile=@P_Mobile1,PersonalMobile2=@P_Mobile2,FamilyContact=@F_Mobile1,FamilyContact2=@F_Mobile2,ReferenceName=@R_Name,ReferenceMobile=@R_Mobile,OrignalDocumentSubmited=@O_Doc_Submitted,LastCompanyName=@L_Company_Name,LastCompanyWorkTime=@L_WorkTime,Department=@Dept,Designation=@Designation,EmployeeCategory=@E_Category,Contractor=@Contractor,ResidenceStatus=@R_Status,SalaryType=@S_Type,Salary=@Salary,Adharcard=@Adhar,Electioncard=@Election,Pancard=@Pan,BankAcHolderName=@B_A_H_Name,Branch=@BR_Name,AcNumber=@AC_Number,ISFCCode=@ISFC_Code,BankName=@B_Name where Id=@Id");
