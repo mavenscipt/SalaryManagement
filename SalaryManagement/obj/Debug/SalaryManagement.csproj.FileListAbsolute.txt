@@ -60,7 +60,6 @@ D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\Sala
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmSalary.resources
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main.mdf
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main_log.ldf
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe.config
@@ -85,3 +84,6 @@ D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\Sala
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmAllKharchi.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmDailyWadgesSalary.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmCreate.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmUpdateDeleteUser.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmMonthlyBaseSalary.resources

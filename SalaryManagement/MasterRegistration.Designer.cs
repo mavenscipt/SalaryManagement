@@ -913,10 +913,10 @@
             this.rtbMonthlyBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbMonthlyBase.Location = new System.Drawing.Point(166, 163);
             this.rtbMonthlyBase.Name = "rtbMonthlyBase";
-            this.rtbMonthlyBase.Size = new System.Drawing.Size(107, 21);
+            this.rtbMonthlyBase.Size = new System.Drawing.Size(111, 21);
             this.rtbMonthlyBase.TabIndex = 18;
             this.rtbMonthlyBase.TabStop = true;
-            this.rtbMonthlyBase.Text = "MonthlyBase";
+            this.rtbMonthlyBase.Text = "Monthly Base";
             this.rtbMonthlyBase.UseVisualStyleBackColor = true;
             this.rtbMonthlyBase.Validating += new System.ComponentModel.CancelEventHandler(this.Salary_Type_Validating);
             // 
@@ -1340,7 +1340,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Save_Button);

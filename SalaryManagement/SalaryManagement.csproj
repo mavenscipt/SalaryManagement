@@ -83,6 +83,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreate.Designer.cs">
+      <DependentUpon>frmCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDailyWadgesSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +107,17 @@
     <Compile Include="frmkharchi.Designer.cs">
       <DependentUpon>frmkharchi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSalary.cs">
+    <Compile Include="frmMonthlyBaseSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSalary.Designer.cs">
-      <DependentUpon>FrmSalary.cs</DependentUpon>
+    <Compile Include="frmMonthlyBaseSalary.Designer.cs">
+      <DependentUpon>frmMonthlyBaseSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateDeleteUser.Designer.cs">
+      <DependentUpon>frmUpdateDeleteUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Insert_Value.cs">
       <SubType>Form</SubType>
@@ -162,6 +174,9 @@
     <EmbeddedResource Include="frmAllKharchi.resx">
       <DependentUpon>frmAllKharchi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCreate.resx">
+      <DependentUpon>frmCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDailyWadgesSalary.resx">
       <DependentUpon>frmDailyWadgesSalary.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,8 +186,11 @@
     <EmbeddedResource Include="frmkharchi.resx">
       <DependentUpon>frmkharchi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSalary.resx">
-      <DependentUpon>FrmSalary.cs</DependentUpon>
+    <EmbeddedResource Include="frmMonthlyBaseSalary.resx">
+      <DependentUpon>frmMonthlyBaseSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateDeleteUser.resx">
+      <DependentUpon>frmUpdateDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Insert_Value.resx">
       <DependentUpon>Insert_Value.cs</DependentUpon>

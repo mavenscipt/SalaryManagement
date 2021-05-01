@@ -26,13 +26,16 @@ namespace SalaryManagement
         }
         public int CreateUsers(string users,string Pass,int Role)
         {
-                SqlCommand cmd = new SqlCommand("SPCreateUser");
-                cmd.Parameters.AddWithValue("Username", users);
-                cmd.Parameters.AddWithValue("Password", Pass);
-                cmd.Parameters.AddWithValue("Role", Role);
+            SqlCommand cmd = new SqlCommand("insert into [Users] (Username,Password,Role) values ('" + users + "','" + Pass + "','" + Role + "')"); 
+                cmd.Connection = getConnection();
+                return cmd.ExecuteNonQuery();
+
+                //cmd.Parameters.AddWithValue("@Username", users);
+                //cmd.Parameters.AddWithValue("@Password", Pass);
+                //cmd.Parameters.AddWithValue("@Role", Role);
                 //cmd.Connection = getConnection();
-                cmd.CommandType = CommandType.StoredProcedure;
-                return cmd.ExecuteNonQuery();        
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //return cmd.ExecuteNonQuery();        
         }
         public string GetSingleItemValue(string query)
         {
@@ -71,6 +74,42 @@ namespace SalaryManagement
         //     cmd.ExecuteNonQuery();        
         //    return (int)returnparameters.Value;
         //}
+       
+        public int ChangePassword(string User, string Password)
+        {
+            SqlCommand cmd = new SqlCommand("Update [Users] set [Password] = '" + Password+ "' where [Username]='"+User+"' ");
+            cmd.Connection = getConnection();
+            return cmd.ExecuteNonQuery();
+        }
+       
+        public int DeleteUsers(string username)
+        {
+            //SqlCommand cmd = new SqlCommand("SPDeleteuser");
+            SqlCommand cmd = new SqlCommand("Delete from [Users] where Username='"+username+"'");
+            cmd.Connection = getConnection();
+            return cmd.ExecuteNonQuery();
+        }
+        public int UserExisting(string users)
+        {
+                            
+                SqlCommand cmd = new SqlCommand("select count(Username) from Users where [Username] = '"+users+"'");
+                cmd.Connection = getConnection();
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            
+
+            //SqlCommand cmd = new SqlCommand("SPGetUserCount");
+            //cmd.Parameters.AddWithValue("Username", users);
+            //SqlParameter Parm = new SqlParameter();
+            //var returnparameters = cmd.Parameters.Add("count", SqlDbType.Int);
+            //returnparameters.Direction = ParameterDirection.ReturnValue;
+
+            //cmd.Connection = getConnection();
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.ExecuteNonQuery();
+            //return (int)returnparameters.Value;
+        }
+
+
         public Dictionary<int, string> GetDataForCombo(string query)
         {
             Dictionary<int, string> Result = new Dictionary<int, string>();
