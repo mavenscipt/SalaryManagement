@@ -82,3 +82,5 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Upad.resources
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Kharchi.resources
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Upadcs.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmFixSalary.resources
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.View_Details.resources

@@ -61,7 +61,7 @@ namespace SalaryManagement
             bool AC_Number = Ac_Number_Validation();
             bool IFSC = IFSC_Code_Validation();
 
-            if (EmployeeName && Picture && Gender && Birthdate && AdharNumber && P_Address && Pincode && P_Mobile && F_Mobile && F2_Mobile && R_Name && R_Mobile && O_Document && L_Company_Name && L_Work_Time && C_Department && C_Designation && C_Employee_Category && C_Contractor && C_Residential_Status && C_SalaryType && C_Salary && Adhar_Card && Pan_Card && Election_Card && AC_Holder_Name && Bank_Name && Branch_Name && AC_Number && IFSC)
+            if (EmployeeName && Picture && Gender && Birthdate && AdharNumber && P_Address && Pincode && P_Mobile && F_Mobile && F2_Mobile && R_Name && R_Mobile && O_Document && L_Company_Name && L_Work_Time && C_Department && C_Designation && C_Employee_Category && C_Residential_Status && C_SalaryType && C_Salary && Adhar_Card && Pan_Card && Election_Card && AC_Holder_Name && Bank_Name && Branch_Name && AC_Number && IFSC)
             {
                 return true;
             }
@@ -1123,6 +1123,12 @@ namespace SalaryManagement
                 copyFile(SourcePath, setFileName);
                 Election_Path = setFileName;
             }
+        }
+
+        private void cmbEmployeecategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Name=cmbEmployeecategory.SelectedItem.ToString();
+            cmbContract.Enabled = (Name == "Direct") ? false : true;
         }
 
         private void Daily_Wages_Validating(object sender, CancelEventArgs e)

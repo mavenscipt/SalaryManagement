@@ -46,10 +46,6 @@ namespace SalaryManagement
             cmbEmployeeName.DisplayMember = "Value";
             cmbEmployeeName.ValueMember = "Key";
         }
-        private void Show_Data_Button_Click(object sender, EventArgs e)
-        {
-            DisplayData();
-        }
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -156,7 +152,25 @@ namespace SalaryManagement
         }
         private void cmbEmployeeName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            DisplayData();
+            string Name = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Value;
+            if (Name != "Select")
+            {
+                dataGridView1.Show();
+                DisplayData();
+            }
+            else
+            {
+                dataGridView1.Hide();
+            }
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Id = dataGridView1.CurrentCell.RowIndex;
+            int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
+            View_Details VD = new View_Details();
+            VD.ViewId = EmployeeId;
+            VD.Show();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SalaryManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dept_Wise_Upadcs());
+            Application.Run(new EDIT_Delete());
         }
     }
 }

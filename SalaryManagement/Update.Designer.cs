@@ -667,6 +667,7 @@
             // 
             // cmbOriginalDoc
             // 
+            this.cmbOriginalDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOriginalDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOriginalDoc.FormattingEnabled = true;
             this.cmbOriginalDoc.Items.AddRange(new object[] {
@@ -1011,6 +1012,7 @@
             this.cmbContract.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.contractorBindingSource, "Name", true));
             this.cmbContract.DataSource = this.contractorBindingSource;
             this.cmbContract.DisplayMember = "Name";
+            this.cmbContract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbContract.FormattingEnabled = true;
             this.cmbContract.Location = new System.Drawing.Point(479, 67);
@@ -1061,6 +1063,7 @@
             this.cmbDesignation.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.designationBindingSource, "Name", true));
             this.cmbDesignation.DataSource = this.designationBindingSource;
             this.cmbDesignation.DisplayMember = "Name";
+            this.cmbDesignation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDesignation.FormattingEnabled = true;
             this.cmbDesignation.Location = new System.Drawing.Point(479, 26);
@@ -1082,6 +1085,7 @@
             // 
             // cmbEmployeecategory
             // 
+            this.cmbEmployeecategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmployeecategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmployeecategory.FormattingEnabled = true;
             this.cmbEmployeecategory.Items.AddRange(new object[] {
@@ -1091,6 +1095,7 @@
             this.cmbEmployeecategory.Name = "cmbEmployeecategory";
             this.cmbEmployeecategory.Size = new System.Drawing.Size(121, 24);
             this.cmbEmployeecategory.TabIndex = 11;
+            this.cmbEmployeecategory.SelectedIndexChanged += new System.EventHandler(this.cmbEmployeecategory_SelectedIndexChanged);
             this.cmbEmployeecategory.Validating += new System.ComponentModel.CancelEventHandler(this.E_Category_Validating);
             // 
             // cmbDepartment
@@ -1098,6 +1103,7 @@
             this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource, "Name", true));
             this.cmbDepartment.DataSource = this.departmentBindingSource;
             this.cmbDepartment.DisplayMember = "Name";
+            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartment.FormattingEnabled = true;
             this.cmbDepartment.Location = new System.Drawing.Point(160, 26);
@@ -1131,7 +1137,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(27, 49);
+            this.label14.Location = new System.Drawing.Point(15, 46);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(108, 17);
             this.label14.TabIndex = 26;
@@ -1141,7 +1147,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(318, 46);
+            this.label13.Location = new System.Drawing.Point(346, 46);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 17);
             this.label13.TabIndex = 28;
@@ -1150,9 +1156,9 @@
             // txtLastCompanyName
             // 
             this.txtLastCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastCompanyName.Location = new System.Drawing.Point(152, 46);
+            this.txtLastCompanyName.Location = new System.Drawing.Point(160, 43);
             this.txtLastCompanyName.Name = "txtLastCompanyName";
-            this.txtLastCompanyName.Size = new System.Drawing.Size(100, 23);
+            this.txtLastCompanyName.Size = new System.Drawing.Size(121, 23);
             this.txtLastCompanyName.TabIndex = 27;
             this.txtLastCompanyName.TextChanged += new System.EventHandler(this.TxtLastCompanyName_TextChanged);
             this.txtLastCompanyName.Validating += new System.ComponentModel.CancelEventHandler(this.Last_Company_Name_Validating);
@@ -1160,9 +1166,9 @@
             // txtLastWorkTime
             // 
             this.txtLastWorkTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastWorkTime.Location = new System.Drawing.Point(432, 43);
+            this.txtLastWorkTime.Location = new System.Drawing.Point(479, 43);
             this.txtLastWorkTime.Name = "txtLastWorkTime";
-            this.txtLastWorkTime.Size = new System.Drawing.Size(100, 23);
+            this.txtLastWorkTime.Size = new System.Drawing.Size(121, 23);
             this.txtLastWorkTime.TabIndex = 29;
             this.txtLastWorkTime.TextChanged += new System.EventHandler(this.TxtLastWorkTime_TextChanged);
             this.txtLastWorkTime.Validating += new System.ComponentModel.CancelEventHandler(this.Work_Time_Validating);
@@ -1176,7 +1182,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(651, 28);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(600, 85);
+            this.groupBox2.Size = new System.Drawing.Size(699, 85);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Last Company Details";

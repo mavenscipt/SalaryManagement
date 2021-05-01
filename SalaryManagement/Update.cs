@@ -1071,6 +1071,12 @@ namespace SalaryManagement
             }
         }
 
+        private void cmbEmployeecategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Name = cmbEmployeecategory.SelectedItem.ToString();
+            cmbContract.Enabled = (Name == "Direct") ? false : true;
+        }
+
         public Update()
         {
             InitializeComponent();

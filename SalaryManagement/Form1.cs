@@ -79,7 +79,6 @@ namespace SalaryManagement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
