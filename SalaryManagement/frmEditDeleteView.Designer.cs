@@ -155,7 +155,6 @@
             this.Controls.Add(this.cmbEmployeeName);
             this.Controls.Add(this.Id_Label);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmEditDeleteView";
             this.Text = "Edit Delete View Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Delete_Data_Load);

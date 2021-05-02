@@ -122,7 +122,6 @@ namespace SalaryManagement
             this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmViewContractor";
             this.Text = "Contractor List";
             this.Load += new System.EventHandler(this.frmViewContractor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

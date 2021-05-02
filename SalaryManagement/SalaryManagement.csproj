@@ -222,6 +222,25 @@
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\storage.ide-shm" />
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\storage.ide-wal" />
     <None Include="app.config" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\BRSEZBR-SEZ-008202003.pdf" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\BRSEZBR-SEZ-008202004.pdf" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\BRSEZBR-SEZ-008202005.pdf" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\BRSEZBR-SEZ-008202101.pdf" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\MCA-2020-728-BinaryRepublikProjectManagementSystem.pdf" />
+    <None Include="bin\Debug\PDF\Harshad Tretiya\ProjectIdea.pdf" />
+    <None Include="bin\Debug\PDF\Jay Pankhania\Adhar_Jay Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Jay Pankhania\Election_Jay Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Jay Pankhania\Pan_Jay Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Jay\Adhar_Jay.pdf" />
+    <None Include="bin\Debug\PDF\Jay\Election_Jay.pdf" />
+    <None Include="bin\Debug\PDF\Jay\Pan_Jay.pdf" />
+    <None Include="bin\Debug\PDF\jp\Adhar_jp.pdf" />
+    <None Include="bin\Debug\PDF\jp\Election_jp.pdf" />
+    <None Include="bin\Debug\PDF\jp\Pan_jp.pdf" />
+    <None Include="bin\Debug\PDF\Karan\Adhar_Karan.pdf" />
+    <None Include="bin\Debug\PDF\Karan\Election_Karan.pdf" />
+    <None Include="bin\Debug\PDF\Karan\Pan_Karan.pdf" />
+    <None Include="bin\Debug\PDF\Kaushal Tretiya\BRSEZBR-SEZ-008202101.pdf" />
     <None Include="MainDataSet.xsc">
       <DependentUpon>MainDataSet.xsd</DependentUpon>
     </None>
@@ -293,15 +312,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Employee_Image\IMG_1568.JPG" />
+    <Content Include="bin\Debug\Employee_Image\IMG_1777.JPG" />
+    <Content Include="bin\Debug\Employee_Image\IMG_3255.JPG" />
+    <Content Include="bin\Debug\Employee_Image\IMG_3319.JPG" />
+    <Content Include="bin\Debug\Employee_Image\Jay Pankhania.JPG" />
+    <Content Include="bin\Debug\Employee_Image\Pankhania Jay .jpg" />
+    <Content Include="bin\Debug\Employee_Image\_MG_5266.JPG" />
+    <Content Include="bin\Debug\SalaryMainDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\SalaryMainDb_log.ldf">
+      <DependentUpon>SalaryMainDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\Debug\SalaryManagement.exe" />
     <Content Include="bin\Debug\SalaryManagement.pdb" />
-    <Content Include="bin\Debug\Main.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\Main_log.ldf">
-      <DependentUpon>Main.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="obj\Debug\SalaryManagement.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SalaryManagement.exe" />
     <Content Include="obj\Debug\SalaryManagement.pdb" />

@@ -9,7 +9,7 @@ namespace SalaryManagement
     class Operations
     {        
         public int UpdateId;
-        public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Main.mdf;Integrated Security=True;MultipleActiveResultSets=True");
+        public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SalaryMainDb.mdf;Integrated Security=True;MultipleActiveResultSets=True");
         public SqlConnection getConnection()
         {
             if (con.State == ConnectionState.Closed)
