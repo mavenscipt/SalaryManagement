@@ -35,17 +35,37 @@ namespace SalaryManagement
         {
             if (Save_Button.Text == "Save")
             {
+
                 int EmployeeID = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Key;
                 string Name = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Value;
-                SqlCommand cmd = new SqlCommand("Insert into tblUpad(EmployeeId,Employee_Name,Amount,PendingAmount,Date) values(@employeeid,@EmployeeName,@amount,@P_Amount,@date)");
-                cmd.Parameters.AddWithValue("@employeeid", EmployeeID);
-                cmd.Parameters.AddWithValue("@EmployeeName", Name);
-                cmd.Parameters.AddWithValue("@amount", Convert.ToInt32(txt_amount.Text));
-                cmd.Parameters.AddWithValue("@P_Amount", Convert.ToInt32(txt_amount.Text));
-                cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
-                cmd.Connection = op.getConnection();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Success");
+                SqlCommand cmd1 = new SqlCommand("Select COUNT(*) from tblUpad where EmployeeId=@EmployeeId");
+                cmd1.Parameters.AddWithValue("@EmployeeId",EmployeeID);
+                cmd1.Connection = op.getConnection();
+                int count = Convert.ToInt32(cmd1.ExecuteScalar());
+                MessageBox.Show(count.ToString());
+                if (count == 1)
+                {
+                    SqlCommand cmd = new SqlCommand("Update tblUpad set Amount+=@Amount,PendingAmount+=@P_Amount,Date=@date where EmployeeId=@E_Id");
+                    cmd.Parameters.AddWithValue("@Amount", Convert.ToInt32(txt_amount.Text));
+                    cmd.Parameters.AddWithValue("@P_Amount", Convert.ToInt32(txt_amount.Text));
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
+                    cmd.Parameters.AddWithValue("@E_Id", EmployeeID);
+                    cmd.Connection = op.getConnection();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Success");
+                    Bind();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("Insert into tblUpad(EmployeeId,Employee_Name,Amount,PendingAmount,Date) values(@employeeid,@EmployeeName,@amount,@P_Amount,@date)");
+                    cmd.Parameters.AddWithValue("@employeeid", EmployeeID);
+                    cmd.Parameters.AddWithValue("@EmployeeName", Name);
+                    cmd.Parameters.AddWithValue("@amount", Convert.ToInt32(txt_amount.Text));
+                    cmd.Parameters.AddWithValue("@P_Amount", Convert.ToInt32(txt_amount.Text));
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
+                    cmd.Connection = op.getConnection();
+                    cmd.ExecuteNonQuery();
+                }
             }
             else if (Save_Button.Text == "Update")
             {
