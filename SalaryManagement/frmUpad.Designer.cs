@@ -206,14 +206,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee Name";
             // 
-            // Upad
+            // frmUpad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Upad";
+            this.Name = "frmUpad";
             this.Text = "Upad";
             this.Load += new System.EventHandler(this.Upad_Load);
             this.panel1.ResumeLayout(false);

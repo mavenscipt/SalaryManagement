@@ -15,7 +15,7 @@ namespace SalaryManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmKharchi_Not_Recoverable());
+            Application.Run(new frmListUpad());
         }
     }
 }

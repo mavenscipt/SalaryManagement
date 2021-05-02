@@ -130,7 +130,6 @@ namespace SalaryManagement
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "frmKharchi_Not_Recoverable";
             this.Text = "Not Recoverable Kharchi";
             this.Load += new System.EventHandler(this.frmKharchi_Not_Recoverable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -21,7 +21,7 @@ namespace SalaryManagement
         private void frmKharchi_Not_Recoverable_Load(object sender, EventArgs e)
         {
             Op.getConnection();
-            string query = "Select * from Kharchi ";
+            string query = "Select * from Kharchi";
             SqlDataAdapter sda = new SqlDataAdapter(query, Op.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -38,5 +38,6 @@ namespace SalaryManagement
             }
             Amount_Textbox.Text = Amount.ToString();
         }
+
     }
 }

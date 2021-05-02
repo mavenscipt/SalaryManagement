@@ -35,8 +35,11 @@ namespace SalaryManagement
         {
             if (Save_Button.Text == "Save")
             {
-                SqlCommand cmd = new SqlCommand("Insert into tblUpad(EmployeeId,Amount,PendingAmount,Date) values(@employeeid,@amount,@P_Amount,@date)");
-                cmd.Parameters.AddWithValue("@employeeid", Convert.ToInt32(cmb_Employee_Name.SelectedValue));
+                int EmployeeID = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Key;
+                string Name = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Value;
+                SqlCommand cmd = new SqlCommand("Insert into tblUpad(EmployeeId,Employee_Name,Amount,PendingAmount,Date) values(@employeeid,@EmployeeName,@amount,@P_Amount,@date)");
+                cmd.Parameters.AddWithValue("@employeeid", EmployeeID);
+                cmd.Parameters.AddWithValue("@EmployeeName", Name);
                 cmd.Parameters.AddWithValue("@amount", Convert.ToInt32(txt_amount.Text));
                 cmd.Parameters.AddWithValue("@P_Amount", Convert.ToInt32(txt_amount.Text));
                 cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
