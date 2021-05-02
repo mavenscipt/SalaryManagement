@@ -142,12 +142,6 @@
     <Compile Include="frmUpdate.Designer.cs">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Update.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Update.Designer.cs">
-      <DependentUpon>Update.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDepartmentWiseList.resx">
       <DependentUpon>frmDepartmentWiseList.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Update.resx">
-      <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SalaryManagement\v16\.suo" />
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\db.lock" />

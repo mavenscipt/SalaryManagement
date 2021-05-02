@@ -33,18 +33,31 @@ namespace SalaryManagement
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dt.Columns.Add("Pic", Type.GetType("System.Byte[]"));
-            foreach (DataRow draw in dt.Rows)
+            if (dt.Rows.Count > 0)
             {
-                draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                dataGridView1.Show();
+                foreach (DataRow draw in dt.Rows)
+                {
+                    draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                }
+                dataGridView1.AutoGenerateColumns = false;
+                dataGridView1.DataSource = dt;
             }
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = dt;
+            else
+            {
+                dataGridView1.Hide();
+            }
         }
         public void ComboboxBind()
         {
+            //Employee Name...
             cmbEmployeeName.DataSource = new BindingSource(Op.GetDataForCombo("select Id,Name from tblEmployeeDetails"), null);
             cmbEmployeeName.DisplayMember = "Value";
             cmbEmployeeName.ValueMember = "Key";
+            //Department
+            cmbDepartment.DataSource = new BindingSource(Op.GetDataForCombo("select Id,Name from Department"), null);
+            cmbDepartment.DisplayMember = "Value";
+            cmbDepartment.ValueMember = "Key";
         }
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,7 +141,8 @@ namespace SalaryManagement
             Id = dataGridView1.CurrentCell.RowIndex;
             //MessageBox.Show();
             int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
-            Update Up = new Update();
+            frmUpdate Up = new frmUpdate();
+            Up.UpdateId = EmployeeId;
             Up.Show();
         }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -169,6 +183,40 @@ namespace SalaryManagement
             View_Details VD = new View_Details();
             VD.ViewId = EmployeeId;
             VD.Show();
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Name = ((KeyValuePair<int, string>)cmbDepartment.SelectedItem).Value;
+            int Dept_id= ((KeyValuePair<int, string>)cmbDepartment.SelectedItem).Key;
+            if (Name != "Select")
+            {
+                
+                Op.getConnection();
+                string query = "Select Id,Name,Photo from tblEmployeeDetails where Department='"+Dept_id+"'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, Op.con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dt.Columns.Add("Pic", Type.GetType("System.Byte[]"));
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.Show();
+                    foreach (DataRow draw in dt.Rows)
+                    {
+                        draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                    }
+                    dataGridView1.AutoGenerateColumns = false;
+                    dataGridView1.DataSource = dt;
+                }
+                else
+                {
+                    dataGridView1.Hide();
+                }
+            }
+            else
+            {
+                dataGridView1.Hide();
+            }
         }
     }
 }

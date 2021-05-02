@@ -95,7 +95,6 @@ namespace SalaryManagement
                 AdharPath = System.IO.Path.Combine(destUrl, System.IO.Path.GetFileName(SourcePath));
             }
         }
-
         private void Pan_Button_Click(object sender, EventArgs e)
         {
             string destUrl = @"PDF\" + txtEmployeeName.Text;
@@ -147,7 +146,6 @@ namespace SalaryManagement
             System.IO.File.Copy(Source, destination, true);
             MessageBox.Show("File Uploaded Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
-
         private void EmployeeName_validating(object sender, CancelEventArgs e)
         {
             EmployeeName_validation();
@@ -430,6 +428,12 @@ namespace SalaryManagement
                 txtLastCompanyName.Text = txtLastCompanyName.Text.Remove(txtLastCompanyName.Text.Length - 1);
             }
         }
+
+        private void TxtLastWorkTime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void Last_Company_Name_Validating(object sender, CancelEventArgs e)
         {
             Last_Company_Name_Validation();
@@ -824,10 +828,10 @@ namespace SalaryManagement
                 txtFamilyMobile2.Text = sdr["FamilyContact2"].ToString();
                 txtReferenceName.Text = sdr["ReferenceName"].ToString();
                 txtReferenceMobile.Text = sdr["ReferenceMobile"].ToString();
-                cmbOriginalDoc.SelectedIndex = int.Parse(sdr["OrignalDocumentSubmited"].ToString());
+                cmbOriginalDoc.SelectedItem = sdr["OrignalDocumentSubmited"].ToString();
                 txtLastCompanyName.Text = sdr["LastCompanyName"].ToString();
                 txtLastWorkTime.Text = sdr["LastCompanyWorkTime"].ToString();
-                cmbDepartment.SelectedIndex = int.Parse(sdr["Department"].ToString());
+                cmbDepartment.SelectedIndex= int.Parse(sdr["Department"].ToString());
                 cmbDesignation.SelectedIndex = int.Parse(sdr["Designation"].ToString());
                 cmbEmployeecategory.SelectedItem = sdr["EmployeeCategory"].ToString();
                 cmbContract.SelectedIndex = int.Parse(sdr["Contractor"].ToString());
@@ -867,7 +871,8 @@ namespace SalaryManagement
             if (Form_valid == true)
             {
                 double Adhar = double.Parse(txtAdharFirst.Text + txtAdharSecond.Text + txtAdharThird.Text);
-                string result=op.UpdateData(UpdateId,txtEmployeeName.Text.ToString(), ImagePath, cmbSex.SelectedItem.ToString(), dtBirthDate.Value.ToString(), Convert.ToInt32(txtAge.Text), Adhar, txtPermanentAddress.Text, Convert.ToInt32(txtPincode.Text), Convert.ToDouble(txtPersonalMobile1.Text), Convert.ToDouble(txtPersonalMobile2.Text), Convert.ToDouble(txtFamilyMobile1.Text), Convert.ToDouble(txtFamilyMobile2.Text), txtReferenceName.Text, Convert.ToDouble(txtReferenceMobile.Text), cmbOriginalDoc.SelectedItem.ToString(), txtLastCompanyName.Text, txtLastWorkTime.Text, cmbDepartment.SelectedIndex, cmbDesignation.SelectedValue.ToString(), cmbEmployeecategory.SelectedItem.ToString(), cmbContract.SelectedValue.ToString(), getResidentialStatus(), getSalaryType(), Convert.ToDouble(txtSalary.Text), AdharPath, Pan_Path, Election_Path, txtAcHolderName.Text, txtBankName.Text, txtBranchName.Text, txtISFCCode.Text, Convert.ToDouble(txtAcNumber.Text));
+                Operations OP = new Operations();
+                string result=OP.UpdateData(UpdateId,txtEmployeeName.Text.ToString(), ImagePath, cmbSex.SelectedItem.ToString(), dtBirthDate.Value.ToString(), Convert.ToInt32(txtAge.Text), Adhar, txtPermanentAddress.Text, Convert.ToInt32(txtPincode.Text), Convert.ToDouble(txtPersonalMobile1.Text), Convert.ToDouble(txtPersonalMobile2.Text), Convert.ToDouble(txtFamilyMobile1.Text), Convert.ToDouble(txtFamilyMobile2.Text), txtReferenceName.Text, Convert.ToDouble(txtReferenceMobile.Text), cmbOriginalDoc.SelectedItem.ToString(), txtLastCompanyName.Text, txtLastWorkTime.Text, cmbDepartment.SelectedIndex, cmbDesignation.SelectedValue.ToString(), cmbEmployeecategory.SelectedItem.ToString(), cmbContract.SelectedValue.ToString(), getResidentialStatus(), getSalaryType(), Convert.ToDouble(txtSalary.Text), AdharPath, Pan_Path, Election_Path, txtAcHolderName.Text, txtBankName.Text, txtBranchName.Text, txtISFCCode.Text, Convert.ToDouble(txtAcNumber.Text));
                 MessageBox.Show(result);
             }
         }
@@ -1074,11 +1079,6 @@ namespace SalaryManagement
                 Election_ErrorProvider.SetError(Election_Button, "");
                 return true;
             }
-        }
-
-        private void cmbEmployeecategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbContract.Enabled = (cmbEmployeecategory.SelectedItem.ToString() != "Direct") ? true : false;
         }
 
         public frmUpdate()
