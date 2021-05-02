@@ -89,6 +89,12 @@
     <Compile Include="frmCreate.Designer.cs">
       <DependentUpon>frmCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDailySalaryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDailySalaryList.Designer.cs">
+      <DependentUpon>FrmDailySalaryList.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDailyWadgesSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="frmFixSalary.Designer.cs">
       <DependentUpon>frmFixSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFixSalaryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFixSalaryList.Designer.cs">
+      <DependentUpon>FrmFixSalaryList.cs</DependentUpon>
     </Compile>
     <Compile Include="frmkharchi.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,12 @@
     <Compile Include="frmMonthlyBaseSalary.Designer.cs">
       <DependentUpon>frmMonthlyBaseSalary.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSalaryFix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSalaryFix.Designer.cs">
+      <DependentUpon>FrmSalaryFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUpdateDeleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,26 +142,6 @@
     </Compile>
     <Compile Include="Insert_Value.Designer.cs">
       <DependentUpon>Insert_Value.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="MasterRegistration.cs">
       <SubType>Form</SubType>
@@ -177,17 +175,26 @@
     <EmbeddedResource Include="frmCreate.resx">
       <DependentUpon>frmCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDailySalaryList.resx">
+      <DependentUpon>FrmDailySalaryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDailyWadgesSalary.resx">
       <DependentUpon>frmDailyWadgesSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFixSalary.resx">
       <DependentUpon>frmFixSalary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFixSalaryList.resx">
+      <DependentUpon>FrmFixSalaryList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmkharchi.resx">
       <DependentUpon>frmkharchi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMonthlyBaseSalary.resx">
       <DependentUpon>frmMonthlyBaseSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSalaryFix.resx">
+      <DependentUpon>FrmSalaryFix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateDeleteUser.resx">
       <DependentUpon>frmUpdateDeleteUser.cs</DependentUpon>
@@ -217,50 +224,6 @@
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\storage.ide-shm" />
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\storage.ide-wal" />
     <None Include="app.config" />
-    <None Include="MainDataSet.xsc">
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet.xss">
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet1.xsc">
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet1.xss">
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet2.xsc">
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet2.xss">
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet3.xsc">
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet3.xss">
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache" />
@@ -279,13 +242,6 @@
   <ItemGroup>
     <Content Include="bin\Debug\SalaryManagement.exe" />
     <Content Include="bin\Debug\SalaryManagement.pdb" />
-    <Content Include="bin\Debug\Main.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\Main_log.ldf">
-      <DependentUpon>Main.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="obj\Debug\SalaryManagement.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SalaryManagement.exe" />
     <Content Include="obj\Debug\SalaryManagement.pdb" />

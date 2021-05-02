@@ -44,16 +44,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Age_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Cancel_Button = new System.Windows.Forms.Button();
-            this.mainDataSet = new SalaryManagement.MainDataSet();
+           
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet1 = new SalaryManagement.MainDataSet1();
+           
             this.designationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet2 = new SalaryManagement.MainDataSet2();
+           
             this.contractorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.rtbWithoutRoom = new System.Windows.Forms.RadioButton();
             this.rtbWithRoom = new System.Windows.Forms.RadioButton();
-            this.designationTableAdapter = new SalaryManagement.MainDataSet1TableAdapters.DesignationTableAdapter();
             this.label41 = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.rtbDailyWages = new System.Windows.Forms.RadioButton();
@@ -61,8 +60,7 @@
             this.Save_Button = new System.Windows.Forms.Button();
             this.rtbFix = new System.Windows.Forms.RadioButton();
             this.AdharNumber_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.contractorTableAdapter = new SalaryManagement.MainDataSet2TableAdapters.ContractorTableAdapter();
-            this.departmentTableAdapter = new SalaryManagement.MainDataSetTableAdapters.DepartmentTableAdapter();
+           
             this.picturebox_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Branch_Name_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Election_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -157,11 +155,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Employee_Name_ErrorProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Age_ErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet1)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.designationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet2)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.contractorBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdharNumber_ErrorProvider)).BeginInit();
@@ -340,33 +338,26 @@
             // 
             // mainDataSet
             // 
-            this.mainDataSet.DataSetName = "MainDataSet";
-            this.mainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // departmentBindingSource
             // 
             this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.mainDataSet;
+           
             // 
             // mainDataSet1
             // 
-            this.mainDataSet1.DataSetName = "MainDataSet1";
-            this.mainDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // designationBindingSource
             // 
             this.designationBindingSource.DataMember = "Designation";
-            this.designationBindingSource.DataSource = this.mainDataSet1;
+           
             // 
             // mainDataSet2
             // 
-            this.mainDataSet2.DataSetName = "MainDataSet2";
-            this.mainDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // contractorBindingSource
             // 
             this.contractorBindingSource.DataMember = "Contractor";
-            this.contractorBindingSource.DataSource = this.mainDataSet2;
             // 
             // panel1
             // 
@@ -405,7 +396,6 @@
             // 
             // designationTableAdapter
             // 
-            this.designationTableAdapter.ClearBeforeFill = true;
             // 
             // label41
             // 
@@ -483,11 +473,9 @@
             // 
             // contractorTableAdapter
             // 
-            this.contractorTableAdapter.ClearBeforeFill = true;
             // 
             // departmentTableAdapter
             // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
             // 
             // picturebox_ErrorProvider
             // 
@@ -1322,11 +1310,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Age_ErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.designationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1434,16 +1419,16 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.ComboBox cmbContract;
         private System.Windows.Forms.BindingSource contractorBindingSource;
-        private MainDataSet2 mainDataSet2;
+      
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.ComboBox cmbDesignation;
         private System.Windows.Forms.BindingSource designationBindingSource;
-        private MainDataSet1 mainDataSet1;
+       
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ComboBox cmbEmployeecategory;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.BindingSource departmentBindingSource;
-        private MainDataSet mainDataSet;
+      
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1465,10 +1450,10 @@
         private System.Windows.Forms.ErrorProvider BirthDate_ErrorProvider;
         private System.Windows.Forms.ErrorProvider Employee_Name_ErrorProvider;
         private System.Windows.Forms.ErrorProvider Age_ErrorProvider;
-        private MainDataSet1TableAdapters.DesignationTableAdapter designationTableAdapter;
+        
         private System.Windows.Forms.ErrorProvider AdharNumber_ErrorProvider;
-        private MainDataSet2TableAdapters.ContractorTableAdapter contractorTableAdapter;
-        private MainDataSetTableAdapters.DepartmentTableAdapter departmentTableAdapter;
+        
+        
         private System.Windows.Forms.ErrorProvider picturebox_ErrorProvider;
         private System.Windows.Forms.ErrorProvider Branch_Name_ErrorProvider;
         private System.Windows.Forms.ErrorProvider Election_ErrorProvider;

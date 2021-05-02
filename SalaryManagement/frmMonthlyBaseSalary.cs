@@ -80,6 +80,10 @@ namespace SalaryManagement
             {
                DaysCalculation(days, Convert.ToInt32(txtPresent.Text));
             }
+            else
+            {
+                txtLeave.Text = "0";
+            }
         }
         public double PerDaySalary()
         {
@@ -91,12 +95,14 @@ namespace SalaryManagement
                 //  MessageBox.Show(PerDay.ToString());
                 return PerDay;
             }
+            
             return 0;
         }
        // public Salary()
         public void DaysCalculation(int TotalDays,int Present)
         {
             double PerDaysalary = PerDaySalary();
+            
             MessageBox.Show(PerDaysalary.ToString());
             double PayableSalary = 0;
             if (TotalDays == Present)
@@ -105,7 +111,7 @@ namespace SalaryManagement
                 double ExtraSalary = Present + 3;
                 PayableSalary = PerDaysalary * ExtraSalary;
                 MessageBox.Show("Payable Salary" + PayableSalary);
-               
+                txtLeave.Text = "0";
             }
 
             int LeaveDay = TotalDays - Present;
@@ -113,22 +119,66 @@ namespace SalaryManagement
             {
                 double Sal = Present * PerDaysalary;
                 MessageBox.Show("Not Cut Salary" + Sal);
-                
+                txtLeave.Text = "3";
             }
             if(LeaveDay > 3)
             {
+                txtLeave.Text = LeaveDay.ToString();
                 int LeaveCal = LeaveDay - 3;
                 int CutSalary = LeaveCal * 2;
                 int Pay = Present - CutSalary;
                 double s = Pay * PerDaysalary;
                 MessageBox.Show(s.ToString());
             }
-         //   MessageBox.Show(LeaveDay.ToString());
+            txtLeave.Text = LeaveDay.ToString();
+            //   MessageBox.Show(LeaveDay.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             PerDaySalary();
+        }
+
+        private void txtPresent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOverTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRoomRent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+           double PerDaysalary = PerDaySalary();
+            txtPerDaySalary.Text = PerDaysalary.ToString("0.00");
         }
     }
 }

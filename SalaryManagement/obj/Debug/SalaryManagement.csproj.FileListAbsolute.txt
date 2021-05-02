@@ -45,21 +45,6 @@ D:\MavenScript\Project\Windows\Salary Management\22-03-2021\MavenScript\SalaryMa
 D:\MavenScript\Project\Windows\Salary Management\22-03-2021\MavenScript\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
 D:\MavenScript\Project\Windows\Salary Management\22-03-2021\MavenScript\SalaryManagement\obj\Debug\SalaryManagement.exe
 D:\MavenScript\Project\Windows\Salary Management\22-03-2021\MavenScript\SalaryManagement\obj\Debug\SalaryManagement.pdb
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main.mdf
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main_log.ldf
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe.config
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.pdb
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csprojAssemblyReference.cache
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.EDIT_Delete.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.MasterRegistration.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Properties.Resources.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Update.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.GenerateResource.cache
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main.mdf
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main_log.ldf
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe.config
@@ -78,12 +63,28 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csprojAssemblyReference.cache
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Dept_Wise_Data.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmFixSalary.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmkharchi.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.EDIT_Delete.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Form1.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmAllKharchi.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmDailyWadgesSalary.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmCreate.resources
-D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmUpdateDeleteUser.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmDailySalaryList.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmDailyWadgesSalary.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmFixSalary.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmFixSalaryList.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmkharchi.resources
 D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmMonthlyBaseSalary.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.FrmSalaryFix.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmUpdateDeleteUser.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Insert_Value.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.MasterRegistration.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Properties.Resources.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Update.resources
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.GenerateResource.cache
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.exe
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.pdb
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe.config
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.exe
+D:\MavenScript\Project\Windows\Salary Management\03-04-2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\SalaryManagement.pdb

@@ -911,11 +911,11 @@ namespace SalaryManagement
         private void MasterRegistration_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mainDataSet2.Contractor' table. You can move, or remove it, as needed.
-            this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
+        //    this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
             // TODO: This line of code loads data into the 'mainDataSet1.Designation' table. You can move, or remove it, as needed.
-            this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
+        //    this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
             // TODO: This line of code loads data into the 'mainDataSet.Department' table. You can move, or remove it, as needed.
-            this.departmentTableAdapter.Fill(this.mainDataSet.Department);
+        //    this.departmentTableAdapter.Fill(this.mainDataSet.Department);
 
         }
 

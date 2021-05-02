@@ -46,6 +46,10 @@ namespace SalaryManagement
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbEmployee = new System.Windows.Forms.ComboBox();
+            this.txtPerDaySalary = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtLeave = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -60,17 +64,18 @@ namespace SalaryManagement
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(150, 194);
+            this.txtSalary.Location = new System.Drawing.Point(229, 101);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.ReadOnly = true;
             this.txtSalary.Size = new System.Drawing.Size(102, 20);
             this.txtSalary.TabIndex = 12;
             this.txtSalary.TabStop = false;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(162, 167);
+            this.label8.Location = new System.Drawing.Point(117, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 27;
@@ -79,7 +84,7 @@ namespace SalaryManagement
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(802, 167);
+            this.label7.Location = new System.Drawing.Point(117, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 26;
@@ -87,7 +92,7 @@ namespace SalaryManagement
             // 
             // txtNetSalary
             // 
-            this.txtNetSalary.Location = new System.Drawing.Point(805, 194);
+            this.txtNetSalary.Location = new System.Drawing.Point(228, 257);
             this.txtNetSalary.Name = "txtNetSalary";
             this.txtNetSalary.ReadOnly = true;
             this.txtNetSalary.Size = new System.Drawing.Size(100, 20);
@@ -97,7 +102,7 @@ namespace SalaryManagement
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(479, 167);
+            this.label6.Location = new System.Drawing.Point(117, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 22;
@@ -106,7 +111,7 @@ namespace SalaryManagement
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(366, 167);
+            this.label5.Location = new System.Drawing.Point(117, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 24;
@@ -114,15 +119,16 @@ namespace SalaryManagement
             // 
             // txtRoomRent
             // 
-            this.txtRoomRent.Location = new System.Drawing.Point(482, 194);
+            this.txtRoomRent.Location = new System.Drawing.Point(229, 179);
             this.txtRoomRent.Name = "txtRoomRent";
             this.txtRoomRent.Size = new System.Drawing.Size(100, 20);
             this.txtRoomRent.TabIndex = 18;
+            this.txtRoomRent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomRent_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(696, 167);
+            this.label4.Location = new System.Drawing.Point(120, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 25;
@@ -130,14 +136,15 @@ namespace SalaryManagement
             // 
             // txtOverTime
             // 
-            this.txtOverTime.Location = new System.Drawing.Point(369, 194);
+            this.txtOverTime.Location = new System.Drawing.Point(229, 153);
             this.txtOverTime.Name = "txtOverTime";
             this.txtOverTime.Size = new System.Drawing.Size(100, 20);
             this.txtOverTime.TabIndex = 16;
+            this.txtOverTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOverTime_KeyPress);
             // 
             // txtKharchi
             // 
-            this.txtKharchi.Location = new System.Drawing.Point(699, 194);
+            this.txtKharchi.Location = new System.Drawing.Point(228, 231);
             this.txtKharchi.Name = "txtKharchi";
             this.txtKharchi.ReadOnly = true;
             this.txtKharchi.Size = new System.Drawing.Size(100, 20);
@@ -147,7 +154,7 @@ namespace SalaryManagement
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(588, 167);
+            this.label3.Location = new System.Drawing.Point(120, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 21;
@@ -155,7 +162,7 @@ namespace SalaryManagement
             // 
             // txtUpad
             // 
-            this.txtUpad.Location = new System.Drawing.Point(591, 194);
+            this.txtUpad.Location = new System.Drawing.Point(228, 205);
             this.txtUpad.Name = "txtUpad";
             this.txtUpad.ReadOnly = true;
             this.txtUpad.Size = new System.Drawing.Size(101, 20);
@@ -164,16 +171,17 @@ namespace SalaryManagement
             // 
             // txtPresent
             // 
-            this.txtPresent.Location = new System.Drawing.Point(261, 194);
+            this.txtPresent.Location = new System.Drawing.Point(229, 127);
             this.txtPresent.Name = "txtPresent";
             this.txtPresent.Size = new System.Drawing.Size(101, 20);
             this.txtPresent.TabIndex = 13;
             this.txtPresent.TextChanged += new System.EventHandler(this.txtPresent_TextChanged);
+            this.txtPresent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresent_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(268, 167);
+            this.label2.Location = new System.Drawing.Point(117, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 15;
@@ -182,7 +190,7 @@ namespace SalaryManagement
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 167);
+            this.label1.Location = new System.Drawing.Point(117, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 14;
@@ -191,17 +199,53 @@ namespace SalaryManagement
             // cmbEmployee
             // 
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(15, 194);
+            this.cmbEmployee.Location = new System.Drawing.Point(229, 74);
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(122, 21);
             this.cmbEmployee.TabIndex = 11;
             this.cmbEmployee.SelectionChangeCommitted += new System.EventHandler(this.cmbEmployee_SelectionChangeCommitted);
+            // 
+            // txtPerDaySalary
+            // 
+            this.txtPerDaySalary.Location = new System.Drawing.Point(229, 284);
+            this.txtPerDaySalary.Name = "txtPerDaySalary";
+            this.txtPerDaySalary.Size = new System.Drawing.Size(100, 20);
+            this.txtPerDaySalary.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(117, 291);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Per Day Salary";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(117, 317);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Leave";
+            // 
+            // txtLeave
+            // 
+            this.txtLeave.Location = new System.Drawing.Point(228, 310);
+            this.txtLeave.Name = "txtLeave";
+            this.txtLeave.Size = new System.Drawing.Size(100, 20);
+            this.txtLeave.TabIndex = 30;
             // 
             // frmMonthlyBaseSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtLeave);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtPerDaySalary);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.label8);
@@ -246,5 +290,9 @@ namespace SalaryManagement
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbEmployee;
+        private System.Windows.Forms.TextBox txtPerDaySalary;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtLeave;
     }
 }

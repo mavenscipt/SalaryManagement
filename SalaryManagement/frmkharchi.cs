@@ -337,5 +337,10 @@ namespace SalaryManagement
         {
 
         }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

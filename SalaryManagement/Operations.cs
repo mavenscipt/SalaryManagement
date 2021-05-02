@@ -9,7 +9,9 @@ namespace SalaryManagement
     class Operations
     {        
         public int UpdateId;
-        public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Main.mdf;Integrated Security=True;MultipleActiveResultSets=True");
+
+        public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\SalaryMainDb.mdf;Integrated Security=True;MultipleActiveResultSets=True");
+        //public SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\MavenScript\Project\Windows\Salary Management\03 - 04 - 2021\Git Hub\Harshad\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\Main1.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True");
         public SqlConnection getConnection()
         {
             if (con.State == ConnectionState.Closed)

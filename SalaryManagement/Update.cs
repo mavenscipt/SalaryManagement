@@ -789,9 +789,9 @@ namespace SalaryManagement
         private void Update_Load(object sender, EventArgs e)
         {
             Operations op = new Operations();
-           this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
-           this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
-            this.departmentTableAdapter.Fill(this.mainDataSet.Department);
+           //this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
+           //this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
+           // this.departmentTableAdapter.Fill(this.mainDataSet.Department);
             SqlCommand cmd = new SqlCommand("Select * from tblEmployeeDetails Where Id=@Id");
             cmd.Parameters.AddWithValue("@ID", UpdateId);
             cmd.Connection = op.getConnection();

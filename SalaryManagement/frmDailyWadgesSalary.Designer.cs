@@ -84,6 +84,7 @@ namespace SalaryManagement
             this.txtPresent.Size = new System.Drawing.Size(101, 20);
             this.txtPresent.TabIndex = 1;
             this.txtPresent.TextChanged += new System.EventHandler(this.txtPresent_TextChanged);
+            this.txtPresent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPresent_KeyPress);
             // 
             // txtUpad
             // 
@@ -128,6 +129,7 @@ namespace SalaryManagement
             this.txtOverTime.Size = new System.Drawing.Size(100, 20);
             this.txtOverTime.TabIndex = 2;
             this.txtOverTime.TextChanged += new System.EventHandler(this.txtOverTime_TextChanged);
+            this.txtOverTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOverTime_KeyPress);
             // 
             // label5
             // 
@@ -145,6 +147,7 @@ namespace SalaryManagement
             this.txtRoomRent.Size = new System.Drawing.Size(100, 20);
             this.txtRoomRent.TabIndex = 3;
             this.txtRoomRent.TextChanged += new System.EventHandler(this.txtRoomRent_TextChanged);
+            this.txtRoomRent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoomRent_KeyPress);
             // 
             // label6
             // 
