@@ -18,7 +18,6 @@ namespace SalaryManagement
             InitializeComponent();
         }
 
-
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Comming Soon","Comming Soon",MessageBoxButtons.OK,MessageBoxIcon.Information);

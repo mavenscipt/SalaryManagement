@@ -69,15 +69,41 @@ namespace SalaryManagement
             }
             else if (Save_Button.Text == "Update")
             {
-                SqlCommand cmd = new SqlCommand("Update tblUpad set Amount=@Amount,PendingAmount=@P_Amount,Date=@date where EmployeeId=@E_Id");
-                cmd.Parameters.AddWithValue("@Amount", Convert.ToInt32(txt_amount.Text));
-                cmd.Parameters.AddWithValue("@P_Amount",Convert.ToInt32(txt_amount.Text));
-                cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
-                cmd.Parameters.AddWithValue("@E_Id", cmb_Employee_Name.SelectedValue);
+                int EmployeeID = ((KeyValuePair<int, string>)cmb_Employee_Name.SelectedItem).Key;
+                int amount = Convert.ToInt32(txt_amount.Text);
+                int pending_amount = Convert.ToInt32(txt_amount.Text);
+                SqlCommand cmd = new SqlCommand("Select * from tblUpad where EmployeeId=@E_ID");
+                cmd.Parameters.AddWithValue("@E_ID", EmployeeID);
+                DataTable dt = new DataTable();
                 cmd.Connection = op.getConnection();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Success");
-                Bind();
+                using (SqlDataReader sdr = cmd.ExecuteReader())
+                {
+                    sdr.Read();
+                    if ((amount < int.Parse(sdr["Amount"].ToString())) || (amount > int.Parse(sdr["Amount"].ToString())))
+                    {
+                        SqlCommand cmd1 = new SqlCommand("Update tblUpad set Amount=@Amount,PendingAmount=@P_Amount-RecoveredAmount,Date=@date where EmployeeId=@E_Id");
+                        cmd1.Parameters.AddWithValue("@Amount", amount);
+                        cmd1.Parameters.AddWithValue("@P_Amount", pending_amount);
+                        cmd1.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
+                        cmd1.Parameters.AddWithValue("@E_Id", EmployeeID);
+                        cmd1.Connection = op.getConnection();
+                        cmd1.ExecuteNonQuery();
+                        MessageBox.Show("Success");
+                        Bind();
+                    }
+                    else
+                    {
+                        SqlCommand cmd2 = new SqlCommand("Update tblUpad set Amount=@Amount,PendingAmount=@P_Amount,Date=@date where EmployeeId=@E_Id");
+                        cmd2.Parameters.AddWithValue("@Amount", amount);
+                        cmd2.Parameters.AddWithValue("@P_Amount", pending_amount);
+                        cmd2.Parameters.AddWithValue("@date", dateTimePicker1.Value.ToString());
+                        cmd2.Parameters.AddWithValue("@E_Id", EmployeeID);
+                        cmd2.Connection = op.getConnection();
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Success");
+                        Bind();
+                    }
+                }
             }
         }
 
@@ -127,7 +153,7 @@ namespace SalaryManagement
                 dataGridView1.DataSource = dt;
                 int Amount = Convert.ToInt32((from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Amount"]).FirstOrDefault());
                 txt_amount.Text = Amount.ToString();
-                dateTimePicker1.Value = (DateTime)(from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Date"]).FirstOrDefault();
+                //dateTimePicker1.Value = (DateTime)(from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Date"]).FirstOrDefault();
             }
             else
             {
