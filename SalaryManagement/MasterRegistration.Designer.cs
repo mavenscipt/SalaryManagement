@@ -90,21 +90,13 @@
             this.rtbMonthlyBase = new System.Windows.Forms.RadioButton();
             this.label39 = new System.Windows.Forms.Label();
             this.cmbContract = new System.Windows.Forms.ComboBox();
-            this.contractorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet2 = new SalaryManagement.MainDataSet2();
             this.label38 = new System.Windows.Forms.Label();
             this.cmbDesignation = new System.Windows.Forms.ComboBox();
-            this.designationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet1 = new SalaryManagement.MainDataSet1();
             this.label37 = new System.Windows.Forms.Label();
             this.cmbEmployeecategory = new System.Windows.Forms.ComboBox();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet4 = new SalaryManagement.MainDataSet4();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mainDataSet = new SalaryManagement.MainDataSet();
             this.Save_Button = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -149,24 +141,12 @@
             this.Election_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Branch_Name_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.picturebox_ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.departmentTableAdapter = new SalaryManagement.MainDataSetTableAdapters.DepartmentTableAdapter();
-            this.designationTableAdapter = new SalaryManagement.MainDataSet1TableAdapters.DesignationTableAdapter();
-            this.contractorTableAdapter = new SalaryManagement.MainDataSet2TableAdapters.ContractorTableAdapter();
-            this.departmentTableAdapter1 = new SalaryManagement.MainDataSet4TableAdapters.DepartmentTableAdapter();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contractorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.designationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Employee_Name_ErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BirthDate_ErrorProvider)).BeginInit();
@@ -918,10 +898,10 @@
             this.rtbMonthlyBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbMonthlyBase.Location = new System.Drawing.Point(166, 163);
             this.rtbMonthlyBase.Name = "rtbMonthlyBase";
-            this.rtbMonthlyBase.Size = new System.Drawing.Size(107, 21);
+            this.rtbMonthlyBase.Size = new System.Drawing.Size(111, 21);
             this.rtbMonthlyBase.TabIndex = 18;
             this.rtbMonthlyBase.TabStop = true;
-            this.rtbMonthlyBase.Text = "MonthlyBase";
+            this.rtbMonthlyBase.Text = "Monthly Base";
             this.rtbMonthlyBase.UseVisualStyleBackColor = true;
             this.rtbMonthlyBase.Validating += new System.ComponentModel.CancelEventHandler(this.Salary_Type_Validating);
             // 
@@ -937,11 +917,8 @@
             // 
             // cmbContract
             // 
-            this.cmbContract.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.contractorBindingSource, "Name", true));
-            this.cmbContract.DataSource = this.contractorBindingSource;
             this.cmbContract.DisplayMember = "Name";
             this.cmbContract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbContract.Enabled = false;
             this.cmbContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbContract.FormattingEnabled = true;
             this.cmbContract.Location = new System.Drawing.Point(479, 67);
@@ -950,16 +927,6 @@
             this.cmbContract.TabIndex = 15;
             this.cmbContract.ValueMember = "Name";
             this.cmbContract.Validating += new System.ComponentModel.CancelEventHandler(this.Contractor_Validating);
-            // 
-            // contractorBindingSource
-            // 
-            this.contractorBindingSource.DataMember = "Contractor";
-            this.contractorBindingSource.DataSource = this.mainDataSet2;
-            // 
-            // mainDataSet2
-            // 
-            this.mainDataSet2.DataSetName = "MainDataSet2";
-            this.mainDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label38
             // 
@@ -974,8 +941,6 @@
             // 
             // cmbDesignation
             // 
-            this.cmbDesignation.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.designationBindingSource, "Name", true));
-            this.cmbDesignation.DataSource = this.designationBindingSource;
             this.cmbDesignation.DisplayMember = "Name";
             this.cmbDesignation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDesignation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -986,16 +951,6 @@
             this.cmbDesignation.TabIndex = 13;
             this.cmbDesignation.ValueMember = "Name";
             this.cmbDesignation.Validating += new System.ComponentModel.CancelEventHandler(this.Designation_Validating);
-            // 
-            // designationBindingSource
-            // 
-            this.designationBindingSource.DataMember = "Designation";
-            this.designationBindingSource.DataSource = this.mainDataSet1;
-            // 
-            // mainDataSet1
-            // 
-            this.mainDataSet1.DataSetName = "MainDataSet1";
-            this.mainDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label37
             // 
@@ -1025,8 +980,6 @@
             // 
             // cmbDepartment
             // 
-            this.cmbDepartment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departmentBindingSource1, "Id", true));
-            this.cmbDepartment.DataSource = this.departmentBindingSource1;
             this.cmbDepartment.DisplayMember = "Name";
             this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1035,18 +988,8 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(121, 24);
             this.cmbDepartment.TabIndex = 11;
-            this.cmbDepartment.ValueMember = "Id";
+            this.cmbDepartment.ValueMember = "Name";
             this.cmbDepartment.Validating += new System.ComponentModel.CancelEventHandler(this.Department_Validating);
-            // 
-            // departmentBindingSource1
-            // 
-            this.departmentBindingSource1.DataMember = "Department";
-            this.departmentBindingSource1.DataSource = this.mainDataSet4;
-            // 
-            // mainDataSet4
-            // 
-            this.mainDataSet4.DataSetName = "MainDataSet4";
-            this.mainDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label21
             // 
@@ -1069,16 +1012,6 @@
             this.label20.TabIndex = 10;
             this.label20.Text = "Department";
             this.label20.Click += new System.EventHandler(this.Label20_Click);
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.mainDataSet;
-            // 
-            // mainDataSet
-            // 
-            this.mainDataSet.DataSetName = "MainDataSet";
-            this.mainDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Save_Button
             // 
@@ -1341,27 +1274,11 @@
             // 
             this.picturebox_ErrorProvider.ContainerControl = this;
             // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // designationTableAdapter
-            // 
-            this.designationTableAdapter.ClearBeforeFill = true;
-            // 
-            // contractorTableAdapter
-            // 
-            this.contractorTableAdapter.ClearBeforeFill = true;
-            // 
-            // departmentTableAdapter1
-            // 
-            this.departmentTableAdapter1.ClearBeforeFill = true;
-            // 
             // MasterRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.Save_Button);
@@ -1384,14 +1301,6 @@
             this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.contractorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.designationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Employee_Name_ErrorProvider)).EndInit();
@@ -1544,17 +1453,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider Branch_Name_ErrorProvider;
         private System.Windows.Forms.ErrorProvider picturebox_ErrorProvider;
-        private MainDataSet mainDataSet;
-        private System.Windows.Forms.BindingSource departmentBindingSource;
-        private MainDataSetTableAdapters.DepartmentTableAdapter departmentTableAdapter;
-        private MainDataSet1 mainDataSet1;
-        private System.Windows.Forms.BindingSource designationBindingSource;
-        private MainDataSet1TableAdapters.DesignationTableAdapter designationTableAdapter;
-        private MainDataSet2 mainDataSet2;
-        private System.Windows.Forms.BindingSource contractorBindingSource;
-        private MainDataSet2TableAdapters.ContractorTableAdapter contractorTableAdapter;
-        private MainDataSet4 mainDataSet4;
-        private System.Windows.Forms.BindingSource departmentBindingSource1;
-        private MainDataSet4TableAdapters.DepartmentTableAdapter departmentTableAdapter1;
+       
+        
     }
 }

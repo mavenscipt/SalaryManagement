@@ -85,3 +85,4 @@ E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagem
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.frmViewContractor.resources
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\SalaryMainDb.mdf
 E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\bin\Debug\bin\Debug\SalaryMainDb_log.ldf
+E:\MavenScript\Git Hub\SalaryManagement\SalaryManagement\obj\Debug\SalaryManagement.Update.resources

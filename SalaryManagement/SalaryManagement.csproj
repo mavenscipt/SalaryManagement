@@ -113,31 +113,6 @@
     <Compile Include="frmViewContractor.Designer.cs">
       <DependentUpon>frmViewContractor.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MainDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainDataSet4.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MasterRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,17 +130,23 @@
     <Compile Include="frmUpad.Designer.cs">
       <DependentUpon>frmUpad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmViewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewDetails.Designer.cs">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUpdate.Designer.cs">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmViewDetails.cs">
+    <Compile Include="Update.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmViewDetails.Designer.cs">
-      <DependentUpon>frmViewDetails.cs</DependentUpon>
+    <Compile Include="Update.Designer.cs">
+      <DependentUpon>Update.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDepartmentWiseList.resx">
       <DependentUpon>frmDepartmentWiseList.cs</DependentUpon>
@@ -210,11 +191,14 @@
     <EmbeddedResource Include="frmUpad.resx">
       <DependentUpon>frmUpad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmViewDetails.resx">
+      <DependentUpon>frmViewDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmViewDetails.resx">
-      <DependentUpon>frmViewDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Update.resx">
+      <DependentUpon>Update.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\SalaryManagement\v16\.suo" />
     <None Include=".vs\SalaryManagement\v16\Server\sqlite3\db.lock" />
@@ -241,61 +225,6 @@
     <None Include="bin\Debug\PDF\Karan\Election_Karan.pdf" />
     <None Include="bin\Debug\PDF\Karan\Pan_Karan.pdf" />
     <None Include="bin\Debug\PDF\Kaushal Tretiya\BRSEZBR-SEZ-008202101.pdf" />
-    <None Include="MainDataSet.xsc">
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet.xss">
-      <DependentUpon>MainDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet1.xsc">
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet1.xss">
-      <DependentUpon>MainDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet2.xsc">
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet2.xss">
-      <DependentUpon>MainDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet3.xsc">
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet3.xss">
-      <DependentUpon>MainDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet4.xsc">
-      <DependentUpon>MainDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="MainDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MainDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MainDataSet4.xss">
-      <DependentUpon>MainDataSet4.xsd</DependentUpon>
-    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache" />

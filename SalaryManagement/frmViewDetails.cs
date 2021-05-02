@@ -23,7 +23,6 @@ namespace SalaryManagement
         {
             MessageBox.Show("Comming Soon","Comming Soon",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
-
         private void View_Details_Load(object sender, EventArgs e)
         {
             string Department = null;
@@ -61,9 +60,24 @@ namespace SalaryManagement
                     sdr1.Read();
                     lbl_Department.Text=sdr1["Name"].ToString();
                 }
-                lbl_Designation.Text = sdr["Designation"].ToString();
+                SqlCommand cmd2 = new SqlCommand("Select * from Designation Where Id=@ID");
+                cmd2.Parameters.AddWithValue("@ID", int.Parse(sdr["Designation"].ToString()));
+                cmd2.Connection = op.getConnection();
+                using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+                {
+                    sdr1.Read();
+                    lbl_Designation.Text = sdr1["Name"].ToString();
+                }
                 lbl_Employee_Category.Text = sdr["EmployeeCategory"].ToString();
-                lbl_Contractor.Text = sdr["Contractor"].ToString();
+                SqlCommand cmd3 = new SqlCommand("Select * from Contractor Where Id=@ID");
+                cmd3.Parameters.AddWithValue("@ID", int.Parse(sdr["Contractor"].ToString()));
+                cmd3.Connection = op.getConnection();
+                using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+                {
+                    sdr1.Read();
+                    lbl_Contractor.Text = sdr1["Name"].ToString();
+                }
+                sdr["Contractor"].ToString();
                 lbl_Residential_Status.Text = sdr["Residencestatus"].ToString();
                 lbl_Salary_Type.Text = sdr["SalaryType"].ToString();
                 lbl_salary.Text = sdr["Salary"].ToString();

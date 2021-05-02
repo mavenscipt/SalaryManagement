@@ -15,7 +15,7 @@ namespace SalaryManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmViewContractor());
+            Application.Run(new frmEditDeleteView());
         }
     }
 }

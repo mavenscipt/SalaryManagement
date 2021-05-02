@@ -13,6 +13,7 @@ namespace SalaryManagement
 {
     public partial class frmUpdate : Form
     {
+        Operations op = new Operations();
         string ImagePath, AdharPath, Pan_Path, Election_Path;
         public int UpdateId;
         private void Cancel_Button_Click(object sender, EventArgs e)
@@ -429,12 +430,6 @@ namespace SalaryManagement
                 txtLastCompanyName.Text = txtLastCompanyName.Text.Remove(txtLastCompanyName.Text.Length - 1);
             }
         }
-
-        private void TxtLastWorkTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Last_Company_Name_Validating(object sender, CancelEventArgs e)
         {
             Last_Company_Name_Validation();
@@ -785,13 +780,24 @@ namespace SalaryManagement
                 return true;
             }
         }
-
+        public void ComboboxBind()
+        {
+            //Department...
+            cmbDepartment.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Department"), null);
+            cmbDepartment.DisplayMember = "Value";
+            cmbDepartment.ValueMember = "Key";
+            //Designation...
+            cmbDesignation.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Designation"), null);
+            cmbDesignation.DisplayMember = "Value";
+            cmbDesignation.ValueMember = "Key";
+            //Contractor...
+            cmbContract.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Contractor"), null);
+            cmbContract.DisplayMember = "Value";
+            cmbContract.ValueMember = "Key";
+        }
         private void Update_Load(object sender, EventArgs e)
         {
-            Operations op = new Operations();
-           this.contractorTableAdapter.Fill(this.mainDataSet2.Contractor);
-           this.designationTableAdapter.Fill(this.mainDataSet1.Designation);
-            this.departmentTableAdapter.Fill(this.mainDataSet.Department);
+            ComboboxBind();
             SqlCommand cmd = new SqlCommand("Select * from tblEmployeeDetails Where Id=@Id");
             cmd.Parameters.AddWithValue("@ID", UpdateId);
             cmd.Connection = op.getConnection();
@@ -818,13 +824,13 @@ namespace SalaryManagement
                 txtFamilyMobile2.Text = sdr["FamilyContact2"].ToString();
                 txtReferenceName.Text = sdr["ReferenceName"].ToString();
                 txtReferenceMobile.Text = sdr["ReferenceMobile"].ToString();
-                cmbOriginalDoc.SelectedItem = sdr["OrignalDocumentSubmited"].ToString();
+                cmbOriginalDoc.SelectedIndex = int.Parse(sdr["OrignalDocumentSubmited"].ToString());
                 txtLastCompanyName.Text = sdr["LastCompanyName"].ToString();
                 txtLastWorkTime.Text = sdr["LastCompanyWorkTime"].ToString();
                 cmbDepartment.SelectedIndex = int.Parse(sdr["Department"].ToString());
-                cmbDesignation.SelectedItem = sdr["Designation"].ToString();
+                cmbDesignation.SelectedIndex = int.Parse(sdr["Designation"].ToString());
                 cmbEmployeecategory.SelectedItem = sdr["EmployeeCategory"].ToString();
-                cmbContract.SelectedItem = sdr["Contractor"].ToString();
+                cmbContract.SelectedIndex = int.Parse(sdr["Contractor"].ToString());
                 if (sdr["Residencestatus"].ToString() == "With Room")
                 {
                     rtbWithRoom.Checked = true;
@@ -861,8 +867,7 @@ namespace SalaryManagement
             if (Form_valid == true)
             {
                 double Adhar = double.Parse(txtAdharFirst.Text + txtAdharSecond.Text + txtAdharThird.Text);
-                Operations OP = new Operations();
-                string result=OP.UpdateData(UpdateId,txtEmployeeName.Text.ToString(), ImagePath, cmbSex.SelectedItem.ToString(), dtBirthDate.Value.ToString(), Convert.ToInt32(txtAge.Text), Adhar, txtPermanentAddress.Text, Convert.ToInt32(txtPincode.Text), Convert.ToDouble(txtPersonalMobile1.Text), Convert.ToDouble(txtPersonalMobile2.Text), Convert.ToDouble(txtFamilyMobile1.Text), Convert.ToDouble(txtFamilyMobile2.Text), txtReferenceName.Text, Convert.ToDouble(txtReferenceMobile.Text), cmbOriginalDoc.SelectedItem.ToString(), txtLastCompanyName.Text, txtLastWorkTime.Text, cmbDepartment.SelectedIndex, cmbDesignation.SelectedValue.ToString(), cmbEmployeecategory.SelectedItem.ToString(), cmbContract.SelectedValue.ToString(), getResidentialStatus(), getSalaryType(), Convert.ToDouble(txtSalary.Text), AdharPath, Pan_Path, Election_Path, txtAcHolderName.Text, txtBankName.Text, txtBranchName.Text, txtISFCCode.Text, Convert.ToDouble(txtAcNumber.Text));
+                string result=op.UpdateData(UpdateId,txtEmployeeName.Text.ToString(), ImagePath, cmbSex.SelectedItem.ToString(), dtBirthDate.Value.ToString(), Convert.ToInt32(txtAge.Text), Adhar, txtPermanentAddress.Text, Convert.ToInt32(txtPincode.Text), Convert.ToDouble(txtPersonalMobile1.Text), Convert.ToDouble(txtPersonalMobile2.Text), Convert.ToDouble(txtFamilyMobile1.Text), Convert.ToDouble(txtFamilyMobile2.Text), txtReferenceName.Text, Convert.ToDouble(txtReferenceMobile.Text), cmbOriginalDoc.SelectedItem.ToString(), txtLastCompanyName.Text, txtLastWorkTime.Text, cmbDepartment.SelectedIndex, cmbDesignation.SelectedValue.ToString(), cmbEmployeecategory.SelectedItem.ToString(), cmbContract.SelectedValue.ToString(), getResidentialStatus(), getSalaryType(), Convert.ToDouble(txtSalary.Text), AdharPath, Pan_Path, Election_Path, txtAcHolderName.Text, txtBankName.Text, txtBranchName.Text, txtISFCCode.Text, Convert.ToDouble(txtAcNumber.Text));
                 MessageBox.Show(result);
             }
         }
@@ -1073,8 +1078,7 @@ namespace SalaryManagement
 
         private void cmbEmployeecategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string Name = cmbEmployeecategory.SelectedItem.ToString();
-            cmbContract.Enabled = (Name == "Direct") ? false : true;
+            cmbContract.Enabled = (cmbEmployeecategory.SelectedItem.ToString() != "Direct") ? true : false;
         }
 
         public frmUpdate()

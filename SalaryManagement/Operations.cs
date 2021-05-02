@@ -18,6 +18,7 @@ namespace SalaryManagement
             }
             return con;
         }
+
         public int CreateUsers(string users,string Pass,int Role)
         {
             SqlCommand cmd = new SqlCommand("SPCreateUser");

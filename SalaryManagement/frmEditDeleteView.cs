@@ -128,10 +128,8 @@ namespace SalaryManagement
             Id = dataGridView1.CurrentCell.RowIndex;
             //MessageBox.Show();
             int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
-            //MessageBox.Show(Op.UpdateId.ToString());
-            frmUpdate up = new frmUpdate();
-            up.UpdateId = EmployeeId;
-            up.Show();
+            Update Up = new Update();
+            Up.Show();
         }
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
