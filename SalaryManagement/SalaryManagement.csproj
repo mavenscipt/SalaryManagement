@@ -95,6 +95,12 @@
     <Compile Include="frmFixSalary.Designer.cs">
       <DependentUpon>frmFixSalary.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKharchi_Not_Recoverable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKharchi_Not_Recoverable.Designer.cs">
+      <DependentUpon>frmKharchi_Not_Recoverable.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFixSalary.resx">
       <DependentUpon>frmFixSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKharchi_Not_Recoverable.resx">
+      <DependentUpon>frmKharchi_Not_Recoverable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSalary.resx">
       <DependentUpon>FrmSalary.cs</DependentUpon>
