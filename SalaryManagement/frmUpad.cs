@@ -137,6 +137,18 @@ namespace SalaryManagement
                     Bind();
                 }
             }
+            if (radioButton3.Checked == true)
+            {
+                if (cmb_Employee_Name.SelectedText == "Select")
+                {
+                    dataGridView1.Visible = false;
+                }
+                else
+                {
+                    dataGridView1.Visible = true;
+                    Bind();
+                }
+            }
         }
         void Bind()
         {
@@ -153,7 +165,8 @@ namespace SalaryManagement
                 dataGridView1.DataSource = dt;
                 int Amount = Convert.ToInt32((from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Amount"]).FirstOrDefault());
                 txt_amount.Text = Amount.ToString();
-                //dateTimePicker1.Value = (DateTime)(from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Date"]).FirstOrDefault();
+                DateTime date=(DateTime)(from DataRow dr in dt.Rows where (int)dr["EmployeeId"] == E_Id select dr["Date"]).FirstOrDefault();
+                dateTimePicker1.Value = Convert.ToDateTime(date.Date.ToShortDateString());
             }
             else
             {
@@ -163,7 +176,6 @@ namespace SalaryManagement
                 dateTimePicker1.ResetText();
             }
         }
-
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Save_Button.Text = "Save";
