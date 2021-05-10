@@ -28,7 +28,7 @@ namespace SalaryManagement
             int EmployeeID = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Key;
             string Name = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Value;
             Op.getConnection();
-            string query = "Select Id,Name,Photo from tblEmployeeDetails where Id=" + EmployeeID + " AND Name='" + Name + "'";
+            string query = "Select Id,Name,Photo from tblEmployeeDetails where Id=" + EmployeeID + " AND Name='" + Name + "' AND Active='True'";
             SqlDataAdapter sda = new SqlDataAdapter(query, Op.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -203,7 +203,14 @@ namespace SalaryManagement
                     dataGridView1.Show();
                     foreach (DataRow draw in dt.Rows)
                     {
-                        draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                        if (File.Exists(draw["Photo"].ToString()))
+                        {
+                            draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                        }
+                        else
+                        {
+                            draw["Pic"] = null;
+                        }
                     }
                     dataGridView1.AutoGenerateColumns = false;
                     dataGridView1.DataSource = dt;

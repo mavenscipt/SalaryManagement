@@ -62,13 +62,6 @@ namespace SalaryManagement
             }
             return Result;
         }
-        public int InsertEmployee(string EmployeeName, string BirthDate, int Age, string Sex, int Adhar1, int Adhar2, int Adhar3, string Permanent, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string OrignalDoc, string ReferenceName, double ReferenceMobile, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber, string LastCompanyName, string LastCompanyWorkingTime, string Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary)
-        {
-            SqlCommand cmd = new SqlCommand("Insert into tblEmployeeMaster");
-            cmd.Connection = getConnection();
-
-            return 0;
-        }
         public Dictionary<int, string> GetEmployeeName()
         {
             Dictionary<int, string> Employee = new Dictionary<int, string>();
@@ -116,6 +109,7 @@ namespace SalaryManagement
         public string InsertEmployee(string EmployeeName,string Photo, string Sex, string BirthDate, int Age,  Double Adhar, string P_Address, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string ReferenceName, double ReferenceMobile, string OrignalDoc, string LastCompanyName, string LastCompanyWorkingTime, int Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary, string Adhar_Card,string Pan_Card,string Election_Card, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber)
         {
             SqlCommand cmd = new SqlCommand("Insert into tblEmployeeDetails(Name,Photo,Sex,BirthDate,Age,AdharNo,PermanentAddress,Pincode,PersonalMobile,PersonalMobile2,FamilyContact,FamilyContact2,ReferenceName,ReferenceMobile,OrignalDocumentSubmited,LastCompanyName,LastCompanyWorkTime,Department,Designation,EmployeeCategory,Contractor,ResidenceStatus,SalaryType,Salary,Adharcard,Electioncard,Pancard,BankAcHolderName,Branch,AcNumber,ISFCCode,BankName) values(@Name,@Photo,@Sex,@Birthdate,@Age,@AdharNo,@P_Address,@Pincode,@P_Mobile1,@P_Mobile2,@F_Mobile1,@F_Mobile2,@R_Name,@R_Mobile,@O_Doc_Submitted,@L_Company_Name,@L_WorkTime,@Dept,@Designation,@E_Category,@Contractor,@R_Status,@S_Type,@Salary,@Adhar,@Election,@Pan,@B_A_H_Name,@BR_Name,@AC_Number,@ISFC_Code,@B_Name)");
+            Console.WriteLine();
             cmd.Parameters.AddWithValue("@Name", EmployeeName);
             cmd.Parameters.AddWithValue("@Photo", Photo);
             cmd.Parameters.AddWithValue("@Sex", Sex);
@@ -149,7 +143,7 @@ namespace SalaryManagement
             cmd.Parameters.AddWithValue("@ISFC_Code", ISFCCode);
             cmd.Parameters.AddWithValue("@AC_Number", AccountNumber);
             cmd.Connection = getConnection();
-            cmd.ExecuteNonQuery();            
+               cmd.ExecuteNonQuery();            
             return "Success";
         }
         public string UpdateData(int id,string EmployeeName, string Photo, string Sex, string BirthDate, int Age, Double Adhar, string P_Address, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string ReferenceName, double ReferenceMobile, string OrignalDoc, string LastCompanyName, string LastCompanyWorkingTime, int Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary, string Adhar_Card, string Pan_Card, string Election_Card, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber)

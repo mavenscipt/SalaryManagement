@@ -224,9 +224,15 @@
     <None Include="bin\Debug\PDF\Jay Pankhania\Adhar_Jay Pankhania.pdf" />
     <None Include="bin\Debug\PDF\Jay Pankhania\Election_Jay Pankhania.pdf" />
     <None Include="bin\Debug\PDF\Jay Pankhania\Pan_Jay Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\JAYU\Adhar_JAYU.pdf" />
+    <None Include="bin\Debug\PDF\JAYU\Election_JAYU.pdf" />
+    <None Include="bin\Debug\PDF\JAYU\Pan_JAYU.pdf" />
     <None Include="bin\Debug\PDF\Jay\Adhar_Jay.pdf" />
     <None Include="bin\Debug\PDF\Jay\Election_Jay.pdf" />
     <None Include="bin\Debug\PDF\Jay\Pan_Jay.pdf" />
+    <None Include="bin\Debug\PDF\jksfhsjfskjfh\Adharcard_jksfhsjfskjfh.pdf" />
+    <None Include="bin\Debug\PDF\jksfhsjfskjfh\Electioncard_jksfhsjfskjfh.pdf" />
+    <None Include="bin\Debug\PDF\jksfhsjfskjfh\Pancard_jksfhsjfskjfh.pdf" />
     <None Include="bin\Debug\PDF\jp\Adhar_jp.pdf" />
     <None Include="bin\Debug\PDF\jp\Election_jp.pdf" />
     <None Include="bin\Debug\PDF\jp\Pan_jp.pdf" />
@@ -234,6 +240,33 @@
     <None Include="bin\Debug\PDF\Karan\Election_Karan.pdf" />
     <None Include="bin\Debug\PDF\Karan\Pan_Karan.pdf" />
     <None Include="bin\Debug\PDF\Kaushal Tretiya\BRSEZBR-SEZ-008202101.pdf" />
+    <None Include="bin\Debug\PDF\lgkflkgdflgkj\Adhar_lgkflkgdflgkj.pdf" />
+    <None Include="bin\Debug\PDF\lgkflkgdflgkj\Election_lgkflkgdflgkj.pdf" />
+    <None Include="bin\Debug\PDF\lgkflkgdflgkj\Pan_lgkflkgdflgkj.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Adharcard_Pankhania jay h.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Adhar_Pankhania Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Electioncard_Pankhania jay h.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Election_Pankhania Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Pancard_Pankhania jay h.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay H\Pan_Pankhania Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay\Adhar_Pankhania Jay.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay\Election_Pankhania Jay.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania Jay\Pan_Pankhania Jay.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Adharcard_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Adhar_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Electioncard_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Election_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Pancard_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhania\Pan_Pankhania.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Jay H\Adhar_Pankhaniya Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Jay H\Election_Pankhaniya Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Jay H\Pan_Pankhaniya Jay H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Manish H\Adhar_Pankhaniya Manish H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Manish H\Election_Pankhaniya Manish H.pdf" />
+    <None Include="bin\Debug\PDF\Pankhaniya Manish H\Pan_Pankhaniya Manish H.pdf" />
+    <None Include="bin\Debug\PDF\Pan\Adhar_Pan.pdf" />
+    <None Include="bin\Debug\PDF\Pan\Election_Pan.pdf" />
+    <None Include="bin\Debug\PDF\Pan\Pan_Pan.pdf" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SalaryManagement.csproj.CoreCompileInputs.cache" />
@@ -250,11 +283,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\bin\Debug\SalaryMainDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\bin\Debug\SalaryMainDb_log.ldf">
+      <DependentUpon>SalaryMainDb.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\Employee_Image\.PNG" />
+    <Content Include="bin\Debug\Employee_Image\Capture.PNG" />
+    <Content Include="bin\Debug\Employee_Image\creative-indian-flag-color-background-with-wavel-for-independence-day_zk2Q5uiu_SB_PM.jpg" />
     <Content Include="bin\Debug\Employee_Image\IMG_1568.JPG" />
     <Content Include="bin\Debug\Employee_Image\IMG_1777.JPG" />
     <Content Include="bin\Debug\Employee_Image\IMG_3255.JPG" />
     <Content Include="bin\Debug\Employee_Image\IMG_3319.JPG" />
+    <Content Include="bin\Debug\Employee_Image\indian-happy-republic-day-banner_1017-16798.jpg" />
     <Content Include="bin\Debug\Employee_Image\Jay Pankhania.JPG" />
+    <Content Include="bin\Debug\Employee_Image\Mahasagar.png" />
+    <Content Include="bin\Debug\Employee_Image\PAN.JPG" />
     <Content Include="bin\Debug\Employee_Image\Pankhania Jay .jpg" />
     <Content Include="bin\Debug\Employee_Image\_MG_5266.JPG" />
     <Content Include="bin\Debug\SalaryMainDb.mdf">

@@ -856,6 +856,12 @@ namespace SalaryManagement
                     rtbDailyWages.Checked = true;
                 }
                 txtSalary.Text = sdr["Salary"].ToString();
+                Aadhar_checkbox.Checked = true;
+                Aadhar_File_textbox.Text = sdr["Adharcard"].ToString();
+                Pan_checkbox.Checked = true;
+                Pan_textbox.Text = sdr["Pancard"].ToString();
+                Election_checkbox.Checked = true;
+                Election_textbox.Text = sdr["Electioncard"].ToString();
                 txtAcHolderName.Text = sdr["BankAcHolderName"].ToString();
                 txtBranchName.Text = sdr["Branch"].ToString();
                 txtAcNumber.Text = sdr["AcNumber"].ToString();

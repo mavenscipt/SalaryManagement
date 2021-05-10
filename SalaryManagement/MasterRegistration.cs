@@ -7,37 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace SalaryManagement
 {
     public partial class MasterRegistration : Form
     {
         Operations op = new Operations();
-        string ImagePath,AdharPath,Pan_Path,Election_Path;
+        string ImagePath,AdharPath, Pan_Path, Election_Path, ForImagePath="";
+
         public MasterRegistration()
         {
             InitializeComponent();
         }
-        private void Save_Button_Click(object sender, EventArgs e)
+        public int SelectedItemId(ComboBox cmb)
         {
-            bool Form_valid = Form_Valid();
-            if (Form_valid==true)
-            {
-                double Adhar = double.Parse(txtAdharFirst.Text + txtAdharSecond.Text + txtAdharThird.Text);
-                string abc=op.InsertEmployee(txtEmployeeName.Text.ToString(),ImagePath,cmbSex.SelectedItem.ToString(),dtBirthDate.Value.ToString(),Convert.ToInt32(txtAge.Text),Adhar,txtPermanentAddress.Text,Convert.ToInt32(txtPincode.Text),Convert.ToDouble(txtPersonalMobile1.Text),Convert.ToDouble(txtPersonalMobile2.Text),Convert.ToDouble(txtFamilyMobile1.Text),Convert.ToDouble(txtFamilyMobile2.Text),txtReferenceName.Text,Convert.ToDouble(txtReferenceMobile.Text),cmbOriginalDoc.SelectedItem.ToString(),txtLastCompanyName.Text,txtLastWorkTime.Text,cmbDepartment.SelectedIndex,cmbDesignation.SelectedValue.ToString(),cmbEmployeecategory.SelectedItem.ToString(),cmbContract.SelectedValue.ToString(),getResidentialStatus(),getSalaryType(),Convert.ToDouble(txtSalary.Text),AdharPath,Pan_Path,Election_Path,txtAcHolderName.Text,txtBankName.Text,txtBranchName.Text,txtISFCCode.Text,Convert.ToDouble(txtAcNumber.Text));
-                MessageBox.Show(abc);
-            }
+
+            int EmployeeID = ((KeyValuePair<int, string>)cmb.SelectedItem).Key;
+            return EmployeeID;
         }
+        public string SelectedItemValue(ComboBox cmb)
+        {
+            string Name = ((KeyValuePair<int, string>)cmb.SelectedItem).Value;
+            return Name;
+        }
+
         bool Form_Valid()
         {
             bool EmployeeName = EmployeeName_validation();
             bool Picture = Image_Validation();
-            bool Gender = GenderValidation();
             bool Birthdate = BirthDateValidation();
+            bool Gender = GenderValidation();
             bool AdharNumber = AdharValidation();
             bool P_Address = Permanent_Address_Validation();
             bool Pincode = Pincode_Validation();
-            bool P_Mobile = Personel_Mobile_Validation();
+            bool P_Mobile = Personal_Mobile_Validation();
             bool F_Mobile = Family_Mobile1_Validation();
             bool F2_Mobile = Family_Mobile2_validation();
             bool R_Name = Reference_Name_Validation();
@@ -70,9 +75,10 @@ namespace SalaryManagement
                 return false;
             }
         }
-        //Common Function for Browse a file for Aadhar, Election and Pan.....
-        void OpenFileDialog(TextBox txt, Button btn)
+        ////Common Function for Browse a file for Aadhar, Election and Pan.....
+        public string OpenFileDialog(TextBox txt,string DocumentName)
         {
+            Stream st;
             OpenFileDialog open_file = new OpenFileDialog();
             open_file.CheckFileExists = true;
             open_file.AddExtension = true;
@@ -80,24 +86,20 @@ namespace SalaryManagement
             open_file.Filter = "PDF files (*.pdf)|*.pdf";
             if (open_file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                txt.Text = open_file.FileName;
-                btn.Enabled = true;
+                if ((st = open_file.OpenFile()) != null)
+                {
+                    txt.Text = open_file.FileName;
+                    return uploadFile(DocumentName, open_file.FileName);
+                }
             }
-            else
-            {
-                btn.Enabled = false;
-            }
+            return "";
         }
         //AadharDocument Upload Checkbox....
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (Aadhar_checkbox.Checked == true)
             {
-                OpenFileDialog(Aadhar_File_textbox, Aadhar_Button);
-            }
-            else
-            {
-                Aadhar_Button.Enabled = false;
+               AdharPath = OpenFileDialog(Aadhar_File_textbox,"Adharcard_");
             }
         }
         //PanCard Document Upload Checkbox....
@@ -105,11 +107,7 @@ namespace SalaryManagement
         {
             if (Pan_checkbox.Checked == true)
             {
-                OpenFileDialog(Pan_textbox, Pan_Button);
-            }
-            else
-            {
-                Pan_Button.Enabled = false;
+              Pan_Path = OpenFileDialog(Pan_textbox,"Pancard_");
             }
         }
         //Election Card Document Upload Checkbox...
@@ -117,11 +115,7 @@ namespace SalaryManagement
         {
             if (Election_checkbox.Checked == true)
             {
-                OpenFileDialog(Election_textbox, Election_Button);
-            }
-            else
-            {
-                Election_Button.Enabled = false;
+              Election_Path =  OpenFileDialog(Election_textbox,"Electioncard_");
             }
         }
 
@@ -132,31 +126,32 @@ namespace SalaryManagement
             MessageBox.Show("File Uploaded Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //Button to Upload Adhar Document...
-        private void Aadhar_Button_Click(object sender, EventArgs e)
+
+        public string uploadFile(string DocumentName, string SourchPath)
         {
-            string filename = "Adhar_" + txtEmployeeName.Text + ".pdf";
+            string filename = DocumentName + txtEmployeeName.Text + ".pdf";
             string destUrl = @"PDF\" + txtEmployeeName.Text;
-            string SourcePath = Aadhar_File_textbox.Text;
+            string SourcePath = SourchPath;
             string setFileName = System.IO.Path.Combine(destUrl, filename);
             if (!System.IO.Directory.Exists("PDF"))
             {
                 System.IO.Directory.CreateDirectory(destUrl);
-                copyFile(SourcePath,setFileName);
-                AdharPath = setFileName;
+                copyFile(SourcePath, setFileName);
+                return setFileName;
             }
             else if (!System.IO.Directory.Exists(destUrl))
             {
                 System.IO.Directory.CreateDirectory(destUrl);
                 copyFile(SourcePath, setFileName);
-                AdharPath = setFileName;
+                return setFileName;
             }
             else
             {
                 copyFile(SourcePath, setFileName);
-                AdharPath = setFileName;
+                return setFileName;
             }
         }
-
+            
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -271,23 +266,28 @@ namespace SalaryManagement
         private void Picture_Browse_Button_Click(object sender, EventArgs e)
         {
             OpenFileDialog op = new OpenFileDialog();
-            op.Filter = "JPG (*.JPG)|*.jpg";
+            op.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             //Copy File
+
             if (op.ShowDialog() == DialogResult.OK)
             {
                 file = Image.FromFile(op.FileName);
+                FileInfo fi = new FileInfo(op.FileName);
+                string extension = fi.Extension;
+                string filename =txtEmployeeName.Text + extension;
+
                 pictureBox1.Image = file;
-                PictureBox_Path_textbox.Text = op.FileName;
+                ForImagePath =  op.FileName;
                 if (!System.IO.Directory.Exists("Employee_Image"))
                 {
                     System.IO.Directory.CreateDirectory("Employee_Image");
-                    System.IO.File.Copy(PictureBox_Path_textbox.Text, System.IO.Path.Combine("Employee_Image", System.IO.Path.GetFileName(PictureBox_Path_textbox.Text)), true);
-                    ImagePath = System.IO.Path.Combine("Employee_Image", System.IO.Path.GetFileName(PictureBox_Path_textbox.Text)).ToString();
+                    System.IO.File.Copy(ForImagePath, System.IO.Path.Combine("Employee_Image", filename), true);
+                    ImagePath = System.IO.Path.Combine("Employee_Image", filename).ToString();
                 }
                 else
                 {
-                    System.IO.File.Copy(PictureBox_Path_textbox.Text, System.IO.Path.Combine("Employee_Image", System.IO.Path.GetFileName(PictureBox_Path_textbox.Text)), true);
-                    ImagePath = System.IO.Path.Combine("Employee_Image", System.IO.Path.GetFileName(PictureBox_Path_textbox.Text)).ToString();
+                    System.IO.File.Copy(ForImagePath, System.IO.Path.Combine("Employee_Image", filename), true);
+                    ImagePath = System.IO.Path.Combine("Employee_Image", filename).ToString();
                 }
             }
         }
@@ -295,16 +295,10 @@ namespace SalaryManagement
         private void DtBirthDate_ValueChanged(object sender, EventArgs e)
         {
             DateTime Dob = dtBirthDate.Value;
+            int DobYear = Dob.Year;
             DateTime Now = DateTime.Now;
-            int Years = new DateTime(DateTime.Now.Subtract(Dob).Ticks).Year - 1;
-            txtAge.Text = Years.ToString();
-        }
-        private void TxtAdharFirst_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtAdharFirst.Text, "[^0-9]"))
-            {
-                txtAdharFirst.Text = txtAdharFirst.Text.Remove(txtAdharFirst.Text.Length - 1);
-            }
+            int Years = Convert.ToInt32(Now.Year) - Convert.ToInt32(DobYear);
+            txtAge.Text = Years.ToString(); //Years.ToString();
         }
 
         private void TxtAdharSecond_TextChanged(object sender, EventArgs e)
@@ -352,7 +346,6 @@ namespace SalaryManagement
         {
             EmployeeName_validation();
         }
-
         private void GenderValidating(object sender, CancelEventArgs e)
         {
             GenderValidation();
@@ -361,7 +354,12 @@ namespace SalaryManagement
         {
             if (!string.IsNullOrEmpty(cmbSex.SelectedText))
             {
-                Sex_ErrorProvider.SetError(cmbSex, "Gender is Required Field.");
+                Sex_ErrorProvider.SetError(cmbSex, "Required");
+                return false;
+            }
+            else if (SelectedItemValue(cmbSex) == "Select")
+            {
+                Sex_ErrorProvider.SetError(cmbSex, "Select the Proper Document");
                 return false;
             }
             else
@@ -483,9 +481,9 @@ namespace SalaryManagement
 
         private void Personal_Mobile_Validating(object sender, CancelEventArgs e)
         {
-            Personel_Mobile_Validation();
+            Personal_Mobile_Validation();
         }
-        bool Personel_Mobile_Validation()
+        bool Personal_Mobile_Validation()
         {
             if (txtPersonalMobile1.Text.Length == 0)
             {
@@ -504,42 +502,11 @@ namespace SalaryManagement
             }
         }
 
-        private void TxtPersonalMobile1_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPersonalMobile1.Text, "[^0-9]"))
-            {
-                txtPersonalMobile1.Text = txtPersonalMobile1.Text.Remove(txtPersonalMobile1.Text.Length - 1);
-            }
-        }
-
-        private void TxtPersonalMobile2_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPersonalMobile2.Text, "[^0-9]"))
-            {
-                txtPersonalMobile2.Text = txtPersonalMobile2.Text.Remove(txtPersonalMobile2.Text.Length - 1);
-            }
-        }
-
-        private void TxtFamilyMobile1_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtFamilyMobile1.Text, "[^0-9]"))
-            {
-                txtFamilyMobile1.Text = txtFamilyMobile1.Text.Remove(txtFamilyMobile1.Text.Length - 1);
-            }
-        }
-
-        private void TxtFamilyMobile2_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtFamilyMobile2.Text, "[^0-9]"))
-            {
-                txtFamilyMobile2.Text = txtFamilyMobile2.Text.Remove(txtFamilyMobile2.Text.Length - 1);
-            }
-        }
-
         private void Family_Mobile1_Validating(object sender, CancelEventArgs e)
         {
             Family_Mobile1_Validation();
         }
+
         bool Family_Mobile1_Validation()
         {
             if (txtFamilyMobile1.Text.Length == 0)
@@ -582,26 +549,11 @@ namespace SalaryManagement
             }
         }
 
-        private void TxtReferenceName_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtReferenceName.Text, "[^a-zA-Z\\s]"))
-            {
-                txtReferenceName.Text = txtReferenceName.Text.Remove(txtReferenceName.Text.Length - 1);
-            }
-        }
-
-        private void TxtReferenceMobile_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtReferenceMobile.Text, "[^0-9]"))
-            {
-                txtReferenceMobile.Text = txtReferenceMobile.Text.Remove(txtReferenceMobile.Text.Length - 1);
-            }
-        }
-
         private void Reference_Name_Validating(object sender, CancelEventArgs e)
         {
             Reference_Name_Validation();
         }
+
         bool Reference_Name_Validation()
         {
             if (txtReferenceName.Text.Length == 0)
@@ -648,6 +600,11 @@ namespace SalaryManagement
             if (!string.IsNullOrEmpty(cmbOriginalDoc.SelectedText))
             {
                 O_Document_C_ErrorProvider.SetError(cmbOriginalDoc, "Required");
+                return false;
+            }
+            else if (SelectedItemValue(cmbOriginalDoc)== "Select")
+            {
+                O_Document_C_ErrorProvider.SetError(cmbOriginalDoc, "Select the Proper Document");
                 return false;
             }
             else
@@ -709,12 +666,12 @@ namespace SalaryManagement
         {
             if (Aadhar_File_textbox.Text.Length == 0)
             {
-                Adhar_Document_ErrorProvider.SetError(Aadhar_Button, "Required");
+                Adhar_Document_ErrorProvider.SetError(Aadhar_File_textbox, "Required");
                 return false;
             }
             else
             {
-                Adhar_Document_ErrorProvider.SetError(Aadhar_Button, "");
+                Adhar_Document_ErrorProvider.SetError(Aadhar_File_textbox, "");
                 return true;
             }
         }
@@ -727,12 +684,12 @@ namespace SalaryManagement
         {
             if (Pan_textbox.Text.Length <= 0)
             {
-                Pan_ErrorProvider.SetError(Pan_Button, "Required");
+                Pan_ErrorProvider.SetError(Pan_textbox, "Required");
                 return false;
             }
             else
             {
-                Pan_ErrorProvider.SetError(Pan_Button, "");
+                Pan_ErrorProvider.SetError(Pan_textbox, "");
                 return true;
             }
         }
@@ -745,12 +702,12 @@ namespace SalaryManagement
         {
             if (Election_textbox.Text.Length <= 0)
             {
-                Election_ErrorProvider.SetError(Election_Button, "Required");
+                Election_ErrorProvider.SetError(Election_textbox, "Required");
                 return false;
             }
             else
             {
-                Election_ErrorProvider.SetError(Election_Button, "");
+                Election_ErrorProvider.SetError(Election_textbox, "Required");
                 return true;
             }
         }
@@ -835,10 +792,7 @@ namespace SalaryManagement
 
         private void TxtAcNumber_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtAcNumber.Text, "[^0-9]"))
-            {
-                txtAcNumber.Text = txtAcNumber.Text.Remove(txtAcNumber.Text.Length - 1);
-            }
+            CheckNumber(txtAcNumber);
         }
 
         private void Ac_Number_Validating(object sender, CancelEventArgs e)
@@ -896,7 +850,7 @@ namespace SalaryManagement
         }
         bool Image_Validation()
         {
-            if (PictureBox_Path_textbox.Text.Length <= 0)
+            if (ForImagePath.Length <= 0)
             {
                 picturebox_ErrorProvider.SetError(picture_Browse_Button, "Required");
                 return false;
@@ -910,30 +864,36 @@ namespace SalaryManagement
 
         private void MasterRegistration_Load(object sender, EventArgs e)
         {
-            ComboboxBind();
+            ComboboxBind(cmbDepartment, "select Id,Name from Department");
+            ComboboxBind(cmbDesignation, "select Id,Name from Designation");
+            ComboboxBind(cmbContract, "select Id,Name from Contractor");
+            ComboboxBind(cmbOriginalDoc, "select Id,Name from tblOrignalDocument");
+            ComboboxBind(cmbEmployeecategory, "select Id,Category from tblEmployeeCategory");
+            cmbSex.DataSource = new BindingSource(GetDataForCombo(), null);
+            cmbSex.DisplayMember = "Value";
+            cmbSex.ValueMember = "Key";
         }
-        public void ComboboxBind()
+        public Dictionary<int, string> GetDataForCombo()
         {
+            Dictionary<int, string> Result = new Dictionary<int, string>();
+            Result.Add(0, "Select");
+            Result.Add(1, "Male");
+            Result.Add(2, "Female");
+            return Result;
+        }
+
+        public void ComboboxBind(ComboBox cmb, string query)
+        {
+            //
             //Department...
-            cmbDepartment.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Department"), null);
-            cmbDepartment.DisplayMember = "Value";
-            cmbDepartment.ValueMember = "Key";
-            //Designation...
-            cmbDesignation.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Designation"), null);
-            cmbDesignation.DisplayMember = "Value";
-            cmbDesignation.ValueMember = "Key";
-            //Contractor...
-            cmbContract.DataSource = new BindingSource(op.GetDataForCombo("select Id,Name from Contractor"), null);
-            cmbContract.DisplayMember = "Value";
-            cmbContract.ValueMember = "Key";
+            cmb.DataSource = new BindingSource(op.GetDataForCombo(query), null);
+            cmb.DisplayMember = "Value";
+            cmb.ValueMember = "Key";
         }
 
         private void TxtSalary_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtSalary.Text, "[^0-9]"))
-            {
-                txtSalary.Text = txtSalary.Text.Remove(txtSalary.Text.Length - 1);
-            }
+            CheckNumber(txtSalary);
         }
 
         private void Salary_Validating(object sender, CancelEventArgs e)
@@ -965,6 +925,11 @@ namespace SalaryManagement
                 Department_ErrorProvider.SetError(cmbDepartment, "Required");
                 return false;
             }
+            else if (SelectedItemValue(cmbDepartment)=="Select")
+            {
+                Department_ErrorProvider.SetError(cmbDepartment, "Required");
+                return false;
+            }
             else
             {
                 Department_ErrorProvider.SetError(cmbDepartment, "");
@@ -979,6 +944,11 @@ namespace SalaryManagement
         bool Designation_Validation()
         {
             if (!string.IsNullOrEmpty(cmbDesignation.SelectedText))
+            {
+                Designation_ErrorProvider.SetError(cmbDesignation, "Required");
+                return false;
+            }
+            else if (SelectedItemValue(cmbDesignation)=="Select")
             {
                 Designation_ErrorProvider.SetError(cmbDesignation, "Required");
                 return false;
@@ -1001,6 +971,11 @@ namespace SalaryManagement
                 E_Category_ErrorProvider.SetError(cmbEmployeecategory, "Required");
                 return false;
             }
+            else if (SelectedItemValue(cmbEmployeecategory)=="Select")
+            {
+                E_Category_ErrorProvider.SetError(cmbEmployeecategory, "Required");
+                return false;
+            }
             else
             {
                 E_Category_ErrorProvider.SetError(cmbEmployeecategory, "");
@@ -1015,6 +990,11 @@ namespace SalaryManagement
         bool Contractor_Validation()
         {
             if (!string.IsNullOrEmpty(cmbContract.SelectedText))
+            {
+                Contractor_ErrorProvider.SetError(cmbContract, "Required");
+                return false;
+            }
+            else if (SelectedItemValue(cmbContract)=="Select")
             {
                 Contractor_ErrorProvider.SetError(cmbContract, "Required");
                 return false;
@@ -1097,7 +1077,7 @@ namespace SalaryManagement
             else if (!System.IO.Directory.Exists(destUrl))
             {
                 System.IO.Directory.CreateDirectory(destUrl);
-                copyFile(SourcePath,setFileName);
+                copyFile(SourcePath, setFileName);
                 Pan_Path = setFileName;
             }
             else
@@ -1136,6 +1116,232 @@ namespace SalaryManagement
         private void cmbEmployeecategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbContract.Enabled = (cmbEmployeecategory.SelectedItem.ToString() != "Direct") ? true : false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = tabControl1.SelectedIndex;
+            tabControl1.SelectedIndex = selectedIndex + 1;
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int selectedIndex = tabControl1.SelectedIndex;
+            tabControl1.SelectedIndex = selectedIndex + 1;
+            if (button1.Text == "Submit")
+            {
+                bool Form_validation = Form_Valid();
+                if (Form_validation == true)
+                {
+                    MessageBox.Show("Submit Form");
+                    //Final_Submit();
+                }
+            }
+            if (tabControl1.SelectedIndex.ToString() == "5")
+            {
+                button1.Text = "Submit";
+            }
+            else
+            {
+                button1.Text = "Next";
+            }
+        }
+        private void Final_Submit()
+        {
+            //Basic Information
+            string Name = txtEmployeeName.Text;
+            string Gender = cmbSex.SelectedItem.ToString();
+            DateTime DOB = dtBirthDate.Value;
+            int Age = Convert.ToInt32(txtAge.Text);
+
+            //contact
+            double PersonMobile1 = Convert.ToDouble(txtPersonalMobile1.Text);
+            double PersonMobile2 = Convert.ToDouble(txtPersonalMobile2.Text);
+            double FamilyMobile1 = Convert.ToDouble(txtFamilyMobile1.Text);
+            double FamilyMobile2 = Convert.ToDouble(txtFamilyMobile2.Text);
+            double ReferenceMobile = Convert.ToDouble(txtReferenceMobile.Text);
+            string ReferenceName = txtReferenceName.Text;
+
+            //Address
+            string Address = txtPermanentAddress.Text;
+            double Pincode = Convert.ToDouble(txtPincode.Text);
+
+            // Preveious Company Information
+
+            string PreviousCompany = txtLastCompanyName.Text;
+            string PreviousCompanyWorkTime = txtLastWorkTime.Text;
+
+            // Bank Details
+
+            string BankName = txtBankName.Text;
+            string AcName = txtAcHolderName.Text;
+            string AcNumber = txtAcNumber.Text;
+            string BranchName = txtBankName.Text;
+            string IFSCCode = txtISFCCode.Text;
+
+            // Document Details
+            string FirstAdhar = txtAdharFirst.Text;
+            string SecondAdhar = txtAdharSecond.Text;
+            string ThirdAdhar = txtAdharThird.Text;
+            string Adhar = FirstAdhar + SecondAdhar + ThirdAdhar;
+            string Image = ImagePath;
+            int OrignalDocument = SelectedItemId(cmbOriginalDoc);
+            string PanCard = Pan_Path;
+            string AdharCard = AdharPath;
+            string ElectionCard = Election_Path;
+
+            // Company Details
+
+            int Department = SelectedItemId(cmbDepartment);
+            int Designation = SelectedItemId(cmbDesignation);
+            int Contractor = SelectedItemId(cmbContract);
+            int EmployeeCategory = SelectedItemId(cmbEmployeecategory);
+            int ResendentialStatus = 0;
+            int SalaryType = 0;
+            if (rtbWithRoom.Checked)
+            {
+                ResendentialStatus = 1;
+            }
+            if (rtbWithoutRoom.Checked)
+            {
+                ResendentialStatus = 2;
+            }
+            if (rtbMonthlyBase.Checked)
+            {
+                SalaryType = 1;
+            }
+            else if (rtbFix.Checked)
+            {
+                SalaryType = 2;
+            }
+            else if (rtbDailyWages.Checked)
+            {
+                SalaryType = 3;
+            }
+            double Salary = Convert.ToDouble(txtSalary.Text);
+
+            SqlCommand cmd = new SqlCommand("insert into tblEmployeeDetails ([Name],[Sex],[BirthDate],[Age],[PersonalMobile],[PersonalMobile2],[FamilyContact],[FamilyContact2],[ReferenceMobile],[ReferenceName],[BankName],[BankAcHolderName],[AcNumber],[Branch],[ISFCCode],[EmployeeCategory],[Department],[Designation],[Contractor],[Residencestatus],[SalaryType],[Salary],[PermanentAddress],[Pincode],[LastCompanyName],[LastCompanyWorkTime],[Pancard],[Electioncard],[Adharcard],[AdharNo],[Photo],[OrignalDocumentSubmited],[Active])" +
+              " values(@EmployeeName,@Gender,@DOB,@Age,@PersonMobile1,@PersonMobile2,@FamilyMobile1,@FamilyMobile2,@ReferenceMobile,@ReferenceName,@BankName,@AcName,@AcNumber,@Branch,@IFCS,@EMpCategory,@Department,@Designation,@contractor,@ResStatus,@SalType,@Salary,@Address,@Pincode,@LastCoName,@LastWorkTime,@pancard,@Election,@Adharcard,@AdharNo,@Photo,@orignalDoc,@Active) ");
+
+            cmd.Parameters.AddWithValue("@EmployeeName", Name);
+            cmd.Parameters.AddWithValue("@Gender", Gender);
+            cmd.Parameters.AddWithValue("@DOB", DOB);
+            cmd.Parameters.AddWithValue("@Age", Age);
+            cmd.Parameters.AddWithValue("@PersonMobile1", PersonMobile1);
+            cmd.Parameters.AddWithValue("@PersonMobile2", PersonMobile2);
+            cmd.Parameters.AddWithValue("@FamilyMobile1", FamilyMobile1);
+            cmd.Parameters.AddWithValue("@FamilyMobile2", FamilyMobile2);
+            cmd.Parameters.AddWithValue("@ReferenceMobile", ReferenceMobile);
+            cmd.Parameters.AddWithValue("@ReferenceName", ReferenceName);
+            cmd.Parameters.AddWithValue("@BankName", BankName);
+            cmd.Parameters.AddWithValue("@AcName", AcName);
+            cmd.Parameters.AddWithValue("@AcNumber", AcNumber);
+            cmd.Parameters.AddWithValue("@Branch", BranchName);
+            cmd.Parameters.AddWithValue("@IFCS", IFSCCode);
+            cmd.Parameters.AddWithValue("@EMpCategory", EmployeeCategory);
+            cmd.Parameters.AddWithValue("@Department", Department);
+            cmd.Parameters.AddWithValue("@Designation", Designation);
+            cmd.Parameters.AddWithValue("@contractor", Contractor);
+            cmd.Parameters.AddWithValue("@ResStatus", ResendentialStatus);
+            cmd.Parameters.AddWithValue("@SalType", SalaryType);
+            cmd.Parameters.AddWithValue("@Salary", Salary);
+            cmd.Parameters.AddWithValue("@Address", Address);
+            cmd.Parameters.AddWithValue("@Pincode", Pincode);
+            cmd.Parameters.AddWithValue("@LastCoName", PreviousCompany);
+            cmd.Parameters.AddWithValue("@LastWorkTime", PreviousCompanyWorkTime);
+            cmd.Parameters.AddWithValue("@pancard", Pan_Path);
+            cmd.Parameters.AddWithValue("@Election", Election_Path);
+            cmd.Parameters.AddWithValue("@Adharcard", AdharPath);
+            cmd.Parameters.AddWithValue("@AdharNo", Adhar);
+            cmd.Parameters.AddWithValue("@Photo", Image);
+            cmd.Parameters.AddWithValue("@orignalDoc", OrignalDocument);
+            cmd.Parameters.AddWithValue("@Active", true);
+
+            cmd.Connection = op.getConnection();
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+                MessageBox.Show("Insert Successfully");
+            }
+        }
+
+        private void txtAdharFirst_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckNumber(txtAdharFirst);
+        }
+
+        private void txtAdharSecond_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckNumber(txtAdharSecond);
+        }
+
+        private void txtAdharThird_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckNumber(txtAdharThird);
+        }
+
+        private void txtPersonalMobile1_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckNumber(txtPersonalMobile1);
+        }
+
+        private void txtPersonalMobile2_TextChanged(object sender, EventArgs e)
+        {
+            CheckNumber(txtPersonalMobile1);
+        }
+
+        private void txtFamilyMobile1_TextChanged(object sender, EventArgs e)
+        {
+            CheckNumber(txtFamilyMobile1);
+        }
+
+        private void txtFamilyMobile2_TextChanged(object sender, EventArgs e)
+        {
+            CheckNumber(txtFamilyMobile2);
+        }
+        //Common Function for the Checking the Number Value....
+        private void CheckNumber(TextBox txt)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt.Text, "[^0-9]"))
+            {
+                txt.Text = txt.Text.Remove(txt.Text.Length - 1);
+            }
+        }
+        //Common Function for the Name and Text Value With space..
+        private void CheckText(TextBox text)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(text.Text, "[^a-zA-Z\\s]"))
+            {
+                text.Text = text.Text.Remove(text.Text.Length - 1);
+            }
+        }
+        private void txtReferenceName_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckText(txtReferenceName);
+        }
+
+        private void txtReferenceMobile_TextChanged(object sender, EventArgs e)
+        {
+            CheckNumber(txtReferenceMobile);
+        }
+
+        private void txtEmployeeName_TextChanged(object sender, EventArgs e)
+        {
+            CheckText(txtEmployeeName);
+        }
+
+        private void txtPincode_TextChanged_1(object sender, EventArgs e)
+        {
+            CheckNumber(txtPincode);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = tabControl1.SelectedIndex;
+            if (selectedIndex > 0)
+            { 
+                 tabControl1.SelectedIndex = selectedIndex - 1;
+            }
+            button1.Text = "Next";
         }
 
         private void Daily_Wages_Validating(object sender, CancelEventArgs e)
