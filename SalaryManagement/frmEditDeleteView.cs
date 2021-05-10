@@ -121,13 +121,6 @@ namespace SalaryManagement
                 contextMenuStrip1.Enabled = false;
             }
         }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex != -1 && e.ColumnIndex != -1)
-            {
-            }
-        }
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -236,13 +229,16 @@ namespace SalaryManagement
         private void deleteTemporaryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string confirm = (MessageBox.Show("Are You Sure You want to Temporary Delete the Data.?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)).ToString();
-            Id = dataGridView1.CurrentCell.RowIndex;
-            int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
-            SqlCommand cmd = new SqlCommand("Update tblEmployeeDetails set Active='False' where Id=" + EmployeeId);
-            cmd.Connection = Op.getConnection();
-            cmd.ExecuteNonQuery();
-            ComboboxBind();
-            DisplayData();
+            if (confirm == "Yes")
+            {
+                Id = dataGridView1.CurrentCell.RowIndex;
+                int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
+                SqlCommand cmd = new SqlCommand("Update tblEmployeeDetails set Active='False' where Id=" + EmployeeId);
+                cmd.Connection = Op.getConnection();
+                cmd.ExecuteNonQuery();
+                ComboboxBind();
+                DisplayData();
+            }
         }
     }
 }

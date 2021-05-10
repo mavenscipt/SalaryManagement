@@ -68,7 +68,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
@@ -128,14 +127,14 @@
             // deleteTemporaryToolStripMenuItem
             // 
             this.deleteTemporaryToolStripMenuItem.Name = "deleteTemporaryToolStripMenuItem";
-            this.deleteTemporaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteTemporaryToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.deleteTemporaryToolStripMenuItem.Text = "Delete Temporary";
             this.deleteTemporaryToolStripMenuItem.Click += new System.EventHandler(this.deleteTemporaryToolStripMenuItem_Click);
             // 
             // deletePermanentToolStripMenuItem
             // 
             this.deletePermanentToolStripMenuItem.Name = "deletePermanentToolStripMenuItem";
-            this.deletePermanentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePermanentToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.deletePermanentToolStripMenuItem.Text = "Delete Permanent";
             this.deletePermanentToolStripMenuItem.Click += new System.EventHandler(this.deletePermanentToolStripMenuItem_Click);
             // 

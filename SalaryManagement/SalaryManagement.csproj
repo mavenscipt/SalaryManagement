@@ -119,6 +119,12 @@
     <Compile Include="frmInsert_Department_Designation_Contractor.Designer.cs">
       <DependentUpon>frmInsert_Department_Designation_Contractor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTemporary_Deleted_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemporary_Deleted_Employee.Designer.cs">
+      <DependentUpon>frmTemporary_Deleted_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmViewContractor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInsert_Department_Designation_Contractor.resx">
       <DependentUpon>frmInsert_Department_Designation_Contractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemporary_Deleted_Employee.resx">
+      <DependentUpon>frmTemporary_Deleted_Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViewContractor.resx">
       <DependentUpon>frmViewContractor.cs</DependentUpon>

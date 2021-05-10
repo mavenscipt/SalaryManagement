@@ -24,7 +24,6 @@ namespace SalaryManagement
         }
         private void View_Details_Load(object sender, EventArgs e)
         {
-            string Department = null;
             Operations op = new Operations();
             SqlCommand cmd = new SqlCommand("Select * from tblEmployeeDetails Where Id=@ID");
             cmd.Parameters.AddWithValue("@ID", ViewId);
@@ -48,7 +47,14 @@ namespace SalaryManagement
                 lbl_Family_Mobile_Number_2.Text = sdr["FamilyContact2"].ToString();
                 lbl_Reference_Name.Text = sdr["ReferenceName"].ToString();
                 lbl_Reference_Mobile.Text = sdr["ReferenceMobile"].ToString();
-                lbl_Original_Document.Text = sdr["OrignalDocumentSubmited"].ToString();
+                SqlCommand cmd5 = new SqlCommand("Select * from tblOrignalDocument Where Id=@ID");
+                cmd5.Parameters.AddWithValue("@ID", int.Parse(sdr["OrignalDocumentSubmited"].ToString()));
+                cmd5.Connection = op.getConnection();
+                using (SqlDataReader sdr1 = cmd5.ExecuteReader())
+                {
+                    sdr1.Read();
+                    lbl_Original_Document.Text = sdr1["Name"].ToString();
+                }
                 lbl_Last_Company_Name.Text = sdr["LastCompanyName"].ToString();
                 lbl_Last_Company_Work_Time.Text = sdr["LastCompanyWorkTime"].ToString();
                 SqlCommand cmd1 = new SqlCommand("Select * from Department Where Id=@ID");
@@ -62,16 +68,23 @@ namespace SalaryManagement
                 SqlCommand cmd2 = new SqlCommand("Select * from Designation Where Id=@ID");
                 cmd2.Parameters.AddWithValue("@ID", int.Parse(sdr["Designation"].ToString()));
                 cmd2.Connection = op.getConnection();
-                using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+                using (SqlDataReader sdr1 = cmd2.ExecuteReader())
                 {
                     sdr1.Read();
                     lbl_Designation.Text = sdr1["Name"].ToString();
                 }
-                lbl_Employee_Category.Text = sdr["EmployeeCategory"].ToString();
-                SqlCommand cmd3 = new SqlCommand("Select * from Contractor Where Id=@ID");
-                cmd3.Parameters.AddWithValue("@ID", int.Parse(sdr["Contractor"].ToString()));
+                SqlCommand cmd3 = new SqlCommand("Select * from tblEmployeeCategory Where Id=@ID");
+                cmd3.Parameters.AddWithValue("@ID", int.Parse(sdr["EmployeeCategory"].ToString()));
                 cmd3.Connection = op.getConnection();
-                using (SqlDataReader sdr1 = cmd1.ExecuteReader())
+                using (SqlDataReader sdr1 = cmd3.ExecuteReader())
+                {
+                    sdr1.Read();
+                    lbl_Employee_Category.Text = sdr1["Category"].ToString();
+                }
+                SqlCommand cmd4 = new SqlCommand("Select * from Contractor Where Id=@ID");
+                cmd4.Parameters.AddWithValue("@ID", int.Parse(sdr["Contractor"].ToString()));
+                cmd4.Connection = op.getConnection();
+                using (SqlDataReader sdr1 = cmd4.ExecuteReader())
                 {
                     sdr1.Read();
                     lbl_Contractor.Text = sdr1["Name"].ToString();
