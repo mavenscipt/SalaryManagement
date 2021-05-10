@@ -33,6 +33,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteTemporaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePermanentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbEmployeeName = new System.Windows.Forms.ComboBox();
             this.Id_Label = new System.Windows.Forms.Label();
@@ -116,10 +118,26 @@
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteTemporaryToolStripMenuItem,
+            this.deletePermanentToolStripMenuItem});
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // deleteTemporaryToolStripMenuItem
+            // 
+            this.deleteTemporaryToolStripMenuItem.Name = "deleteTemporaryToolStripMenuItem";
+            this.deleteTemporaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteTemporaryToolStripMenuItem.Text = "Delete Temporary";
+            this.deleteTemporaryToolStripMenuItem.Click += new System.EventHandler(this.deleteTemporaryToolStripMenuItem_Click);
+            // 
+            // deletePermanentToolStripMenuItem
+            // 
+            this.deletePermanentToolStripMenuItem.Name = "deletePermanentToolStripMenuItem";
+            this.deletePermanentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePermanentToolStripMenuItem.Text = "Delete Permanent";
+            this.deletePermanentToolStripMenuItem.Click += new System.EventHandler(this.deletePermanentToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -237,5 +255,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem deleteTemporaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletePermanentToolStripMenuItem;
     }
 }

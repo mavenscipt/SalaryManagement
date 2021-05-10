@@ -75,37 +75,7 @@ namespace SalaryManagement
             }
             return Employee;
         }
-        //public Dictionary<int,string> GetUserName()
-        //{
-        //    Dictionary<int,string> Users = new Dictionary<int,string>();
-        //    Users.Add(0, "Select");
-        //    SqlCommand cmd = new SqlCommand("SPSelectAllUsers");
-        //    cmd.Connection = getConnection();
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    SqlDataReader dr = cmd.ExecuteReader();
-        //    while (dr.Read())
-        //    {
-        //        Users.Add(Convert.ToInt32(dr[0].ToString()), dr[1].ToString());        
-        //    }
-        //    return Users;
-        //}
-        //public int ChangePassword(string User,string Password)
-        //{
-        //    SqlCommand cmd = new SqlCommand("SPUpdatePassword");
-        //    cmd.Parameters.AddWithValue("Username", User);
-        //    cmd.Parameters.AddWithValue("Password", Password);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Connection = getConnection();
-        //    return cmd.ExecuteNonQuery();         
-        //}
-        //public int DeleteUsers(string username)
-        //{
-        //    SqlCommand cmd = new SqlCommand("SPDeleteuser");
-        //    cmd.Connection = getConnection();
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("Username",username);
-        //    return cmd.ExecuteNonQuery();
-        //}
+
         public string InsertEmployee(string EmployeeName,string Photo, string Sex, string BirthDate, int Age,  Double Adhar, string P_Address, int Pincode, Double PersonalMobile, Double PersonalMobile2, Double FamilyMobile, Double FamilyMobil2, string ReferenceName, double ReferenceMobile, string OrignalDoc, string LastCompanyName, string LastCompanyWorkingTime, int Department, string Designation, string EmployeeCategory, string Contractor, string ResidenceStatus, string SalaryType, double salary, string Adhar_Card,string Pan_Card,string Election_Card, string BankAccountHolderName, string BankName, string BranchName, string ISFCCode, double AccountNumber)
         {
             SqlCommand cmd = new SqlCommand("Insert into tblEmployeeDetails(Name,Photo,Sex,BirthDate,Age,AdharNo,PermanentAddress,Pincode,PersonalMobile,PersonalMobile2,FamilyContact,FamilyContact2,ReferenceName,ReferenceMobile,OrignalDocumentSubmited,LastCompanyName,LastCompanyWorkTime,Department,Designation,EmployeeCategory,Contractor,ResidenceStatus,SalaryType,Salary,Adharcard,Electioncard,Pancard,BankAcHolderName,Branch,AcNumber,ISFCCode,BankName) values(@Name,@Photo,@Sex,@Birthdate,@Age,@AdharNo,@P_Address,@Pincode,@P_Mobile1,@P_Mobile2,@F_Mobile1,@F_Mobile2,@R_Name,@R_Mobile,@O_Doc_Submitted,@L_Company_Name,@L_WorkTime,@Dept,@Designation,@E_Category,@Contractor,@R_Status,@S_Type,@Salary,@Adhar,@Election,@Pan,@B_A_H_Name,@BR_Name,@AC_Number,@ISFC_Code,@B_Name)");

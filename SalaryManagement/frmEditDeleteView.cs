@@ -38,7 +38,14 @@ namespace SalaryManagement
                 dataGridView1.Show();
                 foreach (DataRow draw in dt.Rows)
                 {
-                    draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                    if (File.Exists(draw["Photo"].ToString()))
+                    {
+                        draw["Pic"] = File.ReadAllBytes(draw["Photo"].ToString());
+                    }
+                    else 
+                    {
+                        draw["Pic"] = null;
+                    }
                 }
                 dataGridView1.AutoGenerateColumns = false;
                 dataGridView1.DataSource = dt;
@@ -51,7 +58,7 @@ namespace SalaryManagement
         public void ComboboxBind()
         {
             //Employee Name...
-            cmbEmployeeName.DataSource = new BindingSource(Op.GetDataForCombo("select Id,Name from tblEmployeeDetails"), null);
+            cmbEmployeeName.DataSource = new BindingSource(Op.GetDataForCombo("select Id,Name from tblEmployeeDetails Where Active='True'"), null);
             cmbEmployeeName.DisplayMember = "Value";
             cmbEmployeeName.ValueMember = "Key";
             //Department
@@ -145,23 +152,6 @@ namespace SalaryManagement
             Up.UpdateId = EmployeeId;
             Up.Show();
         }
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string confirm = (MessageBox.Show("Are You Sure You want to Permanently Delete the Data.?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)).ToString();
-            if (confirm == "Yes")
-            {
-                Id = dataGridView1.CurrentCell.RowIndex;
-                int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
-                string result = Op.DeleteData(EmployeeId);
-
-                if (result == "Success")
-                {
-                    MessageBox.Show("Success", "Data Deleted Permanently.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // DisplayData(); 
-                }
-
-            }
-        }
         private void cmbEmployeeName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string Name = ((KeyValuePair<int, string>)cmbEmployeeName.SelectedItem).Value;
@@ -190,10 +180,9 @@ namespace SalaryManagement
             string Name = ((KeyValuePair<int, string>)cmbDepartment.SelectedItem).Value;
             int Dept_id= ((KeyValuePair<int, string>)cmbDepartment.SelectedItem).Key;
             if (Name != "Select")
-            {
-                
+            {       
                 Op.getConnection();
-                string query = "Select Id,Name,Photo from tblEmployeeDetails where Department='"+Dept_id+"'";
+                string query = "Select Id,Name,Photo from tblEmployeeDetails where Department='"+Dept_id+"' AND Active='True'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, Op.con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
@@ -224,6 +213,36 @@ namespace SalaryManagement
             {
                 dataGridView1.Hide();
             }
+        }
+
+        private void deletePermanentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string confirm = (MessageBox.Show("Are You Sure You want to Permanently Delete the Data.?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)).ToString();
+            if (confirm == "Yes")
+            {
+                Id = dataGridView1.CurrentCell.RowIndex;
+                int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
+                string result = Op.DeleteData(EmployeeId);
+
+                if (result == "Success")
+                {
+                    MessageBox.Show("Success", "Data Deleted Permanently.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ComboboxBind(); 
+                    DisplayData();
+                }
+            }
+        }
+
+        private void deleteTemporaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string confirm = (MessageBox.Show("Are You Sure You want to Temporary Delete the Data.?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)).ToString();
+            Id = dataGridView1.CurrentCell.RowIndex;
+            int EmployeeId = Convert.ToInt32(dataGridView1.Rows[Id].Cells[0].Value.ToString());
+            SqlCommand cmd = new SqlCommand("Update tblEmployeeDetails set Active='False' where Id=" + EmployeeId);
+            cmd.Connection = Op.getConnection();
+            cmd.ExecuteNonQuery();
+            ComboboxBind();
+            DisplayData();
         }
     }
 }
